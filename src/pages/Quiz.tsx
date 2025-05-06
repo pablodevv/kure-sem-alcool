@@ -688,19 +688,25 @@ const SKIP_EMAIL_SCREEN = true;
     />
   ))}
               {currentQ.multipleChoice && currentQ.options && (
-                <motion.button
-  onClick={() => {
-    if ((localAnswers[currentQ.id] as string[])?.length > 0) {
-      setAnswer(currentQ.id, localAnswers[currentQ.id]); // CHAMA setAnswer COM AS SELEÇÕES LOCAIS
-    } else {
-      console.log("Por favor, selecione ao menos uma opção.");
-    }
-  }}
-  className="w-full p-4 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors mt-4"
->
-  Avançar
-</motion.button>
-              )}
+  <motion.button
+    onClick={() => {
+      if ((localAnswers[currentQ.id] as string[])?.length > 0) {
+        setAnswer(currentQ.id, localAnswers[currentQ.id]);
+        // ADICIONE ESTA LÓGICA DE AVANÇO AQUI:
+        if (currentQuestion < questions.length - 1) {
+          setCurrentQuestion(prev => prev + 1);
+        } else {
+          setProcessingAnswers(true);
+        }
+      } else {
+        console.log("Por favor, selecione ao menos uma opção.");
+      }
+    }}
+    className="w-full p-4 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors mt-4"
+  >
+    Avançar
+  </motion.button>
+)}
             </div>
             </motion.div>
           )}
