@@ -379,48 +379,58 @@ const handleGetBottomPlan = () => {
         {renderPlansSection()}
 
         <section className="mt-20 bg-[#0A0729] py-16 rounded-2xl">
-          <h2 className="text-3xl mb-4 text-center">Kure app vs Alternativas</h2>
-          <p className="mb-12 text-center max-w-3xl mx-auto">
-            A maioria das pessoas já tentou métodos de perda de peso "baseados em dieta" ou "baseados em exercícios". 
-            A abordagem Kure é superior em todos os aspectos.
-          </p>
 
-          <div className="max-w-4xl mx-auto bg-[#1B1464] rounded-xl p-8">
-            <div className="grid grid-cols-2 gap-8">
-              <div className="text-center">
-                <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.580966eb.png&w=640&q=75" alt="Kure Logo" className="mx-auto mb-4" />
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl">Dietas ou esportes</h3>
-              </div>
-            </div>
 
-            <div className="space-y-6 mt-8">
-              {comparisonItems.map((item, index) => (
-                <div key={index} className="grid grid-cols-[1fr_2fr_2fr] gap-8 py-4 border-b border-gray-700">
-                  <div className="text-white">{item.label}</div>
-                  <div className="flex items-center gap-2">
-                    <item.kure.icon className={`w-6 h-6 ${item.kure.color}`} />
-                    <span>{item.kure.text}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <item.alternative.icon className={`w-6 h-6 ${item.alternative.color}`} />
-                    <span>{item.alternative.text}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
 
-            <div className="mt-8 text-sm text-gray-400">
-              
-              <p>**Preço médio de personal trainer no Brasil R$ 85.00–200.00 por hora/aula.</p>
-              <p className="ml-4">Preço médio de nutricionista R$ 100.00–300.00 por consulta.</p>
-            </div>
-          </div>
+          <div className="flex-1">
+        <img
+          src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhiskey-glass-block.e8934daa.png&w=1920&q=75"
+          alt=""
+          className="w-full max-w-md mx-auto rounded-lg shadow-xl mb-8 md:mb-0"
+          style={{ marginBottom: '0' }}
+        />
+      </div>
 
+          
+          <h2 className="text-3xl mb-4 text-center">Você vai adorar o Desafio Parar de Beber Álcool se...</h2>
+
+
+          <ul className="space-y-2 mt-4">
+          <li className="flex items-center gap-2">
+            <span className="text-purple-500">✓</span>
+            Você quer aprender a socializar sem depender do álcool.
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="text-purple-500">✓</span>
+            Um estilo de vida sóbrio é seu objetivo final, no entanto, às vezes você tem dificuldade em manter a força de vontade para isso.
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="text-purple-500">✓</span>
+            Você acredita que uma solução única não é adequada para você e, portanto, está procurando um programa personalizado.
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="text-purple-500">✓</span>
+            No passado, você tentou parar de beber, mas voltou aos seus hábitos anteriores.
+          </li>
+
+            <li className="flex items-center gap-2">
+            <span className="text-purple-500">✓</span>
+            Você quer sentir que está ganhando uma nova perspectiva de vida em vez de simplesmente perder um velho hábito.
+          </li>
+
+
+            <li className="flex items-center gap-2">
+            <span className="text-purple-500">✓</span>
+            Você deseja parar de beber álcool sem sentir sintomas graves de abstinência.
+          </li>
+        </ul>
+
+          
+
+        
           <div className="text-center mt-8">
             <Button variant="gradient" size="lg" onClick={scrollToPlans}>
-              Comprar agora!
+              Começar
             </Button>
           </div>
         </section>
