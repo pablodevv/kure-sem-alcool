@@ -96,7 +96,6 @@ export default function Summary() {
 <YAxis
   stroke="#fff"
   domain={[10, 90]}
-  tick={false}
 >
   <Label
     value="Consumo de Álcool"
@@ -164,7 +163,6 @@ export default function Summary() {
                 <YAxis
   stroke="#fff"
   domain={[10, 90]}
-  tick={false}
 >
   <Label
     value="Consumo de Álcool"
