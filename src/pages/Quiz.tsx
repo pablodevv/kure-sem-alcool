@@ -223,7 +223,7 @@ const questions = [
     type: 'info',
     id: 'root_cause',
     image: "https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fno-alco-info-1-mobile.581f05a5.png&w=1920&q=75",
-    title: 'Desta vez, você vai se libertar. Estamos tratando da causa raiz.',
+    title: 'Dessa vez, você vai se libertar. Estamos tratando da causa raiz.',
     content: (
   <>
     <p style={{ color: '#c4afff' }}>Já ouviu alguém dizer: "Você só precisa se controlar mais" ou "Por que você não bebe menos"?</p>
@@ -284,8 +284,8 @@ const questions = [
     options: [
       { label: 'Um copo de vinho/cerveja', value: 'vinhosdsd' },
       { label: 'Algumas cervejas ou coquetéis', value: 'cockfhjdf' },
-      { label: 'Muitas vezes terminando uma garrafa inteira', value: 'garravkjds' },
-      { label: 'Beber muito e perder a noção de quanto consumo', value: 'nocaojdjs' }
+      { label: 'Muitas vezes termino uma garrafa inteira', value: 'garravkjds' },
+      { label: 'Bebo muito e perco a noção de quanto consumo', value: 'nocaojdjs' }
     ]
   },
 
@@ -314,7 +314,7 @@ const questions = [
       { label: 'Náuseas / vômitos', value: 'vomitsd' },
       { label: 'Insônia', value: 'insonidsfd' },
       { label: 'Dores de cabeça', value: 'cabecakjfsdkf' },
-      { label: 'Suando excessivamente', value: 'suorjksdf' },
+      { label: 'Suor excessivo', value: 'suorjksdf' },
       { label: 'Sensação de fraqueza', value: 'farjksdf' },
       { label: 'Perda de memória ou confusão', value: 'confudsjhd' },
       { label: 'Outro', value: 'oslsd' }
@@ -354,7 +354,7 @@ const questions = [
       { label: '"Tenho medo de enfrentar minhas emoções sem álcool."', emoji: '🙈', value: '"Tenho medo de enfrentar minhas emoções sem álcool."' },
       { label: '"Eu não mereço uma vida melhor."', emoji: '😔', value: '"Eu não mereço uma vida melhor."' },
       { label: '"Meus amigos ou familiares esperam que eu beba."', emoji: '🕺', value: '"Meus amigos ou familiares esperam que eu beba."' },
-      { label: 'Incerto', emoji: '🤔', value: 'Incerto' }
+      { label: 'Não sei', emoji: '🤔', value: 'Não Sei' }
     ]
   },
 
@@ -379,10 +379,10 @@ const questions = [
     id: 'activity_level',
     title: 'Qual é sua visão máxima para uma vida sem álcool?',
     options: [
-      { label: 'Sentindo-se mais saudável e com mais energia', emoji: '🌱', value: 'Sentindo-se mais saudável e com mais energia' },
+      { label: 'Me sentir mais saudável e com mais energia', emoji: '🌱', value: 'Me sentir mais saudável e com mais energia' },
       { label: 'Estar mais presente com os entes queridos', emoji: '💞', value: 'Estar mais presente com os entes queridos' },
       { label: 'Alcançar objetivos profissionais ou pessoais', emoji: '🚀', value: 'Alcançar objetivos profissionais ou pessoais' },
-      { label: 'Recuperando o controle e a confiança', emoji: '💪', value: 'Recuperando o controle e a confiança' },
+      { label: 'Recuperar o controle e a confiança', emoji: '💪', value: 'Recuperar o controle e a confiança' },
       { label: 'Outro', emoji: '🤔', value: 'Outro' }
     ]
   },
@@ -402,7 +402,7 @@ const questions = [
   
   {
     id: 'referral',
-    title: 'Você foi encaminhado para Kure por um nutricionista ou terapeuta cognitivo comportamental?',
+    title: 'Você foi encaminhado para o Kure por um nutricionista ou terapeuta cognitivo comportamental?',
     subtitle: 'A hipnose é um método cientificamente comprovado para resolver problemas relacionados à nutrição e questões psicológicas.',
     options: [
       { label: 'Sim', value: 'sinsjf' },
