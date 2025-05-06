@@ -37,7 +37,7 @@ function LoadingScreen({ messages, onComplete }: { messages: string[]; onComplet
       className="fixed inset-0 min-h-screen bg-[#0A061E] text-white flex flex-col items-center justify-center p-4 z-50"
     >
       <h1 className="text-3xl font-semibold text-center mb-12">
-        Tudo pronto! Aguarde um momento enquanto processamos seus dados...
+        Tudo pronto! Aguarde enquanto processamos seus dados...
       </h1>
 
       <div className="w-full max-w-md mb-12">
@@ -74,7 +74,7 @@ function LoadingScreen({ messages, onComplete }: { messages: string[]; onComplet
           ))}
         </div>
         <p className="text-center text-gray-200 mb-4">
-          "É a solução mais fácil para perda de peso que já experimentei. As sessões noturnas melhoraram muito a qualidade do meu sono e reduziram significativamente meu estresse."
+          "Não sei como agradecer aos criadores desse aplicativo. Ele me salvou dos meus hábitos de beber quando eu pensava que nunca conseguiria parar."
         </p>
         <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
           <svg
