@@ -347,14 +347,14 @@ const questions = [
     title: 'Quais são as crenças limitantes que estão impedindo você de parar de beber?',
     multipleChoice: true,
     options: [
-      { label: '"Preciso de álcool para relaxar ou lidar com o estresse."', emoji: '💆‍♀️', value: 'precisodealcodfdf' },
-      { label: '"Não consigo me divertir ou socializar sem beber."', emoji: '🥳', value: 'diversaoaods' },
-      { label: '"Qual é o sentido? Se eu tentar, vou falhar."', emoji: '🤷‍♀️', value: 'sentidsds' },
-      { label: '"O álcool faz parte da minha identidade ou de quem eu sou."', emoji: '😞', value: 'identidfdf' },
-      { label: '"Tenho medo de enfrentar minhas emoções sem álcool."', emoji: '🙈', value: 'medofhnkjdf' },
-      { label: '"Eu não mereço uma vida melhor."', emoji: '😔', value: 'merecoshjkdhsd' },
-      { label: '"Meus amigos ou familiares esperam que eu beba."', emoji: '🕺', value: 'amifjdf' },
-      { label: 'Incerto', emoji: '🤔', value: 'incerkjdskfj' }
+      { label: '"Preciso de álcool para relaxar ou lidar com o estresse."', emoji: '💆‍♀️', value: '"Preciso de álcool para relaxar ou lidar com o estresse."' },
+      { label: '"Não consigo me divertir ou socializar sem beber."', emoji: '🥳', value: '"Não consigo me divertir ou socializar sem beber."' },
+      { label: '"Qual é o sentido? Se eu tentar, vou falhar."', emoji: '🤷‍♀️', value: '"Qual é o sentido? Se eu tentar, vou falhar."' },
+      { label: '"O álcool faz parte da minha identidade ou de quem eu sou."', emoji: '😞', value: '"O álcool faz parte da minha identidade ou de quem eu sou."' },
+      { label: '"Tenho medo de enfrentar minhas emoções sem álcool."', emoji: '🙈', value: '"Tenho medo de enfrentar minhas emoções sem álcool."' },
+      { label: '"Eu não mereço uma vida melhor."', emoji: '😔', value: '"Eu não mereço uma vida melhor."' },
+      { label: '"Meus amigos ou familiares esperam que eu beba."', emoji: '🕺', value: '"Meus amigos ou familiares esperam que eu beba."' },
+      { label: 'Incerto', emoji: '🤔', value: 'Incerto' }
     ]
   },
 
@@ -379,11 +379,11 @@ const questions = [
     id: 'activity_level',
     title: 'Qual é sua visão máxima para uma vida sem álcool?',
     options: [
-      { label: 'Sentindo-se mais saudável e com mais energia', emoji: '🌱', value: 'saudakdfhjkd' },
-      { label: 'Estar mais presente com os entes queridos', emoji: '💞', value: 'presentekjfkd' },
-      { label: 'Alcançar objetivos profissionais ou pessoais', emoji: '🚀', value: 'objsdkshjdk' },
-      { label: 'Recuperando o controle e a confiança', emoji: '💪', value: 'confijdifd' },
-      { label: 'Outro', emoji: '🤔', value: 'odakjfdkfh' }
+      { label: 'Sentindo-se mais saudável e com mais energia', emoji: '🌱', value: 'Sentindo-se mais saudável e com mais energia' },
+      { label: 'Estar mais presente com os entes queridos', emoji: '💞', value: 'Estar mais presente com os entes queridos' },
+      { label: 'Alcançar objetivos profissionais ou pessoais', emoji: '🚀', value: 'Alcançar objetivos profissionais ou pessoais' },
+      { label: 'Recuperando o controle e a confiança', emoji: '💪', value: 'Recuperando o controle e a confiança' },
+      { label: 'Outro', emoji: '🤔', value: 'Outro' }
     ]
   },
 
