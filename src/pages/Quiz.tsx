@@ -488,14 +488,14 @@ export default function Quiz() {
   const [answers, setAnswers] = useState<{ [key: string]: string | string[] }>({});
 
  const handleSingleSelect = (id: string, value: string) => {
-    setAnswers({ ...answers, [id]: value });
+    setLocalAnswers({ ...localAnswers, [id]: value }); // Mantenha para controle local
     console.log(`Resposta única para ${id}:`, value);
-    // A LÓGICA DE AVANÇAR PARA PERGUNTAS ÚNICAS FOI MOVIDA PARA O onSelect DO QuizOption
+    setAnswer(id, value); // AGORA O STORE VAI AVANÇAR A PERGUNTA
   };
 
   const handleMultipleSelect = (id: string, value: string, isSelected: boolean) => {
-    setAnswers(prevAnswers => {
-      const currentAnswers = (prevAnswers[id] as string[]) || [];
+    setLocalAnswers(prevAnswers => { // Mantenha para controle local
+      const currentAnswers = prevAnswers[id] as string[] || [];
       let newAnswers: string[];
       if (isSelected) {
         newAnswers = [...currentAnswers, value];
@@ -505,6 +505,8 @@ export default function Quiz() {
       console.log(`Respostas múltiplas para ${id}:`, newAnswers);
       return { ...prevAnswers, [id]: newAnswers };
     });
+    // NÃO CHAMAMOS setAnswer AQUI DIRETAMENTE PARA CADA SELEÇÃO MÚLTIPLA
+    // O setAnswer SERÁ CHAMADO QUANDO O BOTÃO "Avançar" FOR CLICADO PARA A MÚLTIPLA ESCOLHA
   };
 
   const {
@@ -688,21 +690,17 @@ const SKIP_EMAIL_SCREEN = true;
               ))}
               {currentQ.multipleChoice && currentQ.options && (
                 <motion.button
-                  onClick={() => {
-                    if ((answers[currentQ.id] as string[])?.length > 0) {
-                      if (currentQuestion < questions.length - 1) {
-                        setCurrentQuestion(prev => prev + 1);
-                      } else {
-                        setProcessingAnswers(true);
-                      }
-                    } else {
-                      console.log("Por favor, selecione ao menos uma opção.");
-                    }
-                  }}
-                  className="w-full p-4 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors mt-4"
-                >
-                  Avançar
-                </motion.button>
+    onClick={() => {
+      if ((localAnswers[currentQ.id] as string[])?.length > 0) {
+        setAnswer(currentQ.id, localAnswers[currentQ.id]); // CHAMA setAnswer COM TODAS AS SELEÇÕES MÚLTIPLAS
+      } else {
+        console.log("Por favor, selecione ao menos uma opção.");
+      }
+    }}
+    className="..."
+  >
+    Avançar
+  </motion.button>
               )}
             </div>
             </motion.div>
