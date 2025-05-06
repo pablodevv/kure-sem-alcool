@@ -43,16 +43,16 @@ export default function Home() {
 
         <div className="flex flex-col items-center text-center gap-8">
           <img
-            src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_hero_image_mobile.303035ac.png&w=1920&q=75"
+            src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmartini_hero_desktop.c7962209.png&w=3840&q=75"
             alt="Brain with headphones"
             className="w-50 h-50 object-cover mb-8" style={{ marginBottom: '0' }}
           />
 
           <h1 className="text-4xl font-semibold mb-4" style={{ fontSize: '35px', width: '350px', marginBottom: '0' }}>
-            Bariátrica Virtual com Hipnoterapia
+            Pare de Beber Sem Esforço
           </h1>
           <b style={{ marginBottom: '0', color: 'white' }}><p className="text-gray-400 mb-8" style={{ marginBottom: '0', color: 'white' }}>
-            Sem exercícios ou mudanças na dieta – apenas 15 minutos por dia para começar a ver resultados reais
+            Uma maneira comprovada pela ciência de parar de beber de forma natural e permanente. Sem estresse, sem luta, apenas 15 minutos por dia de hipnoterapia personalizada!
           </p></b>
 
           <div className="flex flex-col gap-4 w-full max-w-md">
@@ -80,19 +80,19 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16" style={{ marginTop: '0' }}>
             <div className="p-6 border border-gray-800 rounded-lg" style={{ marginBottom: '-20px' }}>
               <b style={{ marginBottom: '-20px' }}><p className="text-sm italic mb-4" style={{ marginBottom: '-20px' }}>
-                "71% mais peso perdido com hipnose"
+                "Livre-se do vício do álcool 71% mais rápido com hipnose."
               </p></b>
               <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_1.cff37dae.png&w=256&q=75" alt="MNT Logo" className="h-8" style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '30px' }} />
             </div>
             <div className="p-6 border border-gray-800 rounded-lg" style={{ marginBottom: '-20px' }}>
               <b style={{ marginBottom: '-20px' }}><p className="text-sm italic mb-4" style={{ marginBottom: '-20px' }}>
-                "A hipnoterapia oferece vantagem sobre outros métodos de perda de peso"
+                "A hipnoterapia oferece uma vantagem significativa sobre os métodos tradicionais de cessação do consumo de álcool."
               </p></b>
               <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_2.61ead2ab.png&w=256&q=75" alt="Healthline Logo" className="h-8" style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '30px' }} />
             </div>
             <div className="p-6 border border-gray-800 rounded-lg" style={{ marginBottom: '-20px' }}>
               <b style={{ marginBottom: '-20px' }}><p className="text-sm italic mb-4" style={{ marginBottom: '-20px' }}>
-                "A hipnoterapia tem sido um segredo bem guardado para perda de peso"
+                "A hipnoterapia continua sendo um método pouco conhecido, mas poderoso, para parar de beber."
               </p></b>
               <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_3.35cd9929.png&w=256&q=75" alt="Oprah Logo" className="h-8" style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '30px' }} />
             </div>
