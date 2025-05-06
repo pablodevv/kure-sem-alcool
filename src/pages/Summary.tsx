@@ -19,28 +19,23 @@ const generateChartData = (startWeight: number, targetWeight: number) => {
 const weeklyPlan = [
   {
     week: 'Semana 1',
-    title: 'Iniciando transformação profunda da mente',
-    description: 'Mudando a percepção'
+    title: 'Iniciando uma transformação mental profunda, mudando a percepção'
   },
   {
     week: 'Semana 2',
-    title: 'Bloqueando desejos por comida',
-    description: 'Controle de compulsão'
+    title: 'Reduzindo a vontade de beber álcool'
   },
   {
     week: 'Semana 3',
-    title: 'Melhorando hábitos alimentares',
-    description: 'Novos padrões'
+    title: 'Sentindo-se livre do álcool'
   },
   {
     week: 'Semana 4',
-    title: 'Removendo crenças internas tóxicas',
-    description: 'Libertação mental'
+    title: 'Removendo crenças internas tóxicas'
   },
   {
     week: 'Semana 5 em diante',
-    title: 'Reforçando a transformação mental',
-    description: 'Resultados duradouros'
+    title: 'Reforçando a transformação da mente para resultados duradouros'
   }
 ];
 
@@ -48,21 +43,21 @@ const testimonials = [
   {
     date: '27 Jun 2024',
     rating: 5,
-    text: 'O Kure transformou minha nutrição de uma maneira que eu não poderia imaginar. Recomendo para qualquer pessoa que busca um "hack" efetivo e duradouro para perda de peso.',
+    text: 'Sinceramente, não achei que ia dar certo, mas o Kure mudou totalmente a minha vida! Parei de beber e me sinto incrível. Não acredito como foi fácil!',
     author: 'João K.',
     verified: true
   },
   {
     date: '24 Jun 2024',
     rating: 5,
-    text: 'Super satisfeita. Me livrei do vício em açúcar. As sessões antes de dormir se tornaram meu ritual noturno de relaxamento e pensamento positivo.',
+    text: 'No começo, eu estava cético, mas o Kure me surpreendeu! Depois de apenas algumas sessões, estou livre do álcool e me sinto muito melhor.',
     author: 'Laura S.',
     verified: true
   },
   {
     date: '19 Jun 2024',
     rating: 5,
-    text: 'Experiência fenomenal. A hipnose do Kure desbloqueou uma nova versão de mim. Manter uma nutrição saudável agora é natural.',
+    text: 'Kure mudou tudo! Eu deixei de lutar contra a bebida e passei a me sentir completamente no controle. É como se um peso tivesse sido tirado de mim!',
     author: 'Eliza D.',
     verified: true
   }
@@ -95,7 +90,8 @@ export default function Summary() {
         >
           {/* Mobile First: Prediction Section */}
           <div className="lg:hidden bg-[#1A1632] rounded-2xl p-6">
-            <h3 className="text-xl font-semibold mb-4" style={{ textAlign: 'center' }}>Sua previsão de perda de peso com o Kure</h3>
+            <h3 className="text-xl font-semibold mb-4" style={{ textAlign: 'center' }}>Pare de beber com hipnoterapia</h3>
+            <h3 className="text-xl font-semibold mb-4" style={{ textAlign: 'center' }}>Com o Kure, reduzir o consumo de álcool se torna uma parte natural da sua jornada, ajudando você a progredir mais rápido e a melhorar seu bem-estar geral.</h3>
             <div className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
@@ -126,11 +122,11 @@ export default function Summary() {
             <div className="flex gap-6 mt-4">
               <div className="flex items-center gap-2">
                 <div className="w-4 h-0.5 bg-purple-500"></div>
-                <b><span className="text-sm">Seu progresso usando Kure</span></b>
+                <b><span className="text-sm">Com hipnoterapia</span></b>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-4 h-0.5 bg-gray-500 border-dashed"></div>
-               <b><span className="text-sm">Outros apps de perda de peso</span></b>
+               <b><span className="text-sm">Com motivação</span></b>
               </div>
             </div>
             
@@ -138,24 +134,25 @@ export default function Summary() {
 
           <div>
             <h1 className="font-bold mb-6" style={{ fontSize: '2.2rem' }}>
-  Com base em suas respostas,
-  você pode alcançar <span className="text-purple-400">85% do<br />
-  seu objetivo em 1 mês</span>
+  Com base na sua resposta,
+  você tem <span className="text-purple-400">95% de<br />
+  chance de parar de beber em 1 mês</span>
 </h1>
             <p className="text-gray-400 mb-8 lg:mb-0">
-              Aqui está o que prevemos com base em 24.000+ usuários com IMC e hábitos alimentares semelhantes.
+              Aqui está o que prevemos com base em 24.000 usuários com perfil semelhante
             </p>
             <button
               onClick={() => navigate('/checkout')}
               className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-12 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity"
             >
-              Começar agora
+              Começar
             </button>
           </div>
 
           {/* Desktop Prediction Section */}
           <div className="hidden lg:block bg-[#1A1632] rounded-2xl p-6">
-            <h3 className="text-xl font-semibold mb-4">Sua previsão de perda de peso com o Kure</h3>
+            <h3 className="text-xl font-semibold mb-4">Pare de beber com hipnoterapia</h3>
+            <h3 className="text-xl font-semibold mb-4">Com o Kure, reduzir o consumo de álcool se torna uma parte natural da sua jornada, ajudando você a progredir mais rápido e a melhorar seu bem-estar geral.</h3>
             <div className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
@@ -186,11 +183,11 @@ export default function Summary() {
             <div className="flex gap-6 mt-4">
               <div className="flex items-center gap-2">
                 <div className="w-4 h-0.5 bg-purple-500"></div>
-                <span className="text-sm">Seu progresso usando Kure</span>
+                <span className="text-sm">Com hipnoterapia</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-4 h-0.5 bg-gray-500 border-dashed"></div>
-                <span className="text-sm">Outros apps de perda de peso</span>
+                <span className="text-sm">Com motivação</span>
               </div>
             </div>
             
@@ -203,19 +200,10 @@ export default function Summary() {
       <div className="bg-[#1A1632] py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-6">
-            Seu plano de perda de peso com hipnoterapia
+            Seu plano “Pare de beber” com hipnoterapia
           </h2>
 
-          <div className="flex justify-center gap-12 mb-12">
-            <div className="text-center">
-              <Gauge className="w-8 h-8 mx-auto mb-2 text-purple-400" />
-              <p className="text-lg">Peso desejado - {targetWeight} kg</p>
-            </div>
-            <div className="text-center">
-              <Star className="w-8 h-8 mx-auto mb-2 text-yellow-400" />
-              <p className="text-lg">Probabilidade de sucesso - 96%</p>
-            </div>
-          </div>
+          
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Weekly Timeline */}
@@ -248,21 +236,21 @@ export default function Summary() {
     <div className="flex items-center gap-4 mb-4">
       <Cookie className="w-6 h-6 text-purple-400" />
       <div>
-        <h4 className="font-semibold">Desejos por comida bloqueados</h4>
+        <h4 className="font-semibold">Probabilidade de sucesso</h4>
         <p className="text-gray-400">{answers?.food_craving || 'Doces / chocolate'}</p> {/* Use 'food_craving' */}
       </div>
     </div>
     <div className="flex items-center gap-4 mb-4">
       <UtensilsCrossed className="w-6 h-6 text-purple-400" />
       <div>
-        <h4 className="font-semibold">Hábitos alimentares interrompidos</h4>
+        <h4 className="font-semibold">Visão definitiva</h4>
         <p className="text-gray-400">{answers?.eating_habits || 'Alimentação irregular'}</p> {/* Use 'eating_habits' */}
       </div>
     </div>
     <div className="flex items-center gap-4">
       <Frown className="w-6 h-6 text-purple-400" />
       <div>
-        <h4 className="font-semibold">Crença interna tóxica removida</h4>
+        <h4 className="font-semibold">Crença interna removida</h4>
         <p className="text-gray-400">{answers?.internal_belief || 'Sinto que DEVO limpar o prato'}</p> {/* Use 'internal_belief' */}
       </div>
     </div>
@@ -287,28 +275,28 @@ export default function Summary() {
           <div>
             <h2 className="text-4xl font-bold mb-8">Especialistas por trás do seu plano</h2>
             <p className="text-gray-400 mb-6">
-              Ao criar o Kure, nosso objetivo era oferecer assistência a pessoas que se sentem inseguras
-              sobre progredir em direção aos seus objetivos corporais, especialmente após experimentar
-              repetidos contratempos.
+              Ao criar o Kure, nosso objetivo era oferecer assistência a indivíduos que se sentem inseguros sobre o progresso em direção aos seus objetivos corporais, especialmente depois de passar por repetidos contratempos.
             </p>
             <p className="text-gray-400 mb-6">
-              Com base em nossa experiência trabalhando com milhares de clientes, entendemos que o fator
-              crucial que distingue tentativas bem-sucedidas das malsucedidas está em nossa mentalidade.
-              A hipnoterapia é o método perfeito para abordar esse problema.
+              Com base em nossa experiência trabalhando com milhares de clientes, entendemos que o fator crucial que distingue os empreendimentos bem-sucedidos dos malsucedidos reside em nossa mentalidade. A hipnoterapia é o método perfeito para abordar esse problema.
             </p>
             <p className="text-gray-400 mb-8">
-              O poder de nossos pensamentos e a forte conexão entre nosso intestino e mente são as chaves
-              para alcançar sucesso nas transformações corporais e nutricionais.
+              O poder dos nossos pensamentos e a forte conexão entre nosso intestino e nossa mente são as chaves para alcançar o sucesso nas transformações corporais e nutricionais.
             </p>
+
+            <p className="text-gray-400 mb-8">
+              Experimente o aplicativo Kure e veja como a hipnose pode ajudar você a parar de ter desejos por comida e hábitos alimentares pouco saudáveis.
+            </p>
+            
             <div className="mb-8">
               <h4 className="font-semibold">Michele Rocha</h4>
-              <p className="text-purple-400">Fundadora</p>
+              <p className="text-purple-400">Especialista em hipnoterapia ericksoniana</p>
             </div>
             <button
               onClick={() => navigate('/checkout')}
               className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-12 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity"
             >
-              Começar agora
+              Começar
             </button>
           </div>
          
@@ -321,7 +309,7 @@ export default function Summary() {
           <div className="text-center mb-12">
             <div className="flex justify-center items-center gap-1 mb-2">
               <div className="text-2xl text-yellow-400">{'★'.repeat(5)}</div>
-              <span className="ml-2 text-lg">4.6 / 5 (1000+ avaliações)</span>
+              <span className="ml-2 text-lg">4,6 / 5 (mais de 1.000 avaliações)</span>
             </div>
             <h2 className="text-4xl font-bold">O que nossos usuários dizem sobre o Kure?</h2>
           </div>
@@ -368,7 +356,7 @@ export default function Summary() {
               onClick={() => navigate('/checkout')}
               className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-12 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity"
             >
-              Começar agora
+              Começar
             </button>
           </div>
         </div>
