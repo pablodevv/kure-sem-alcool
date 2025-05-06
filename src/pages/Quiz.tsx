@@ -494,15 +494,17 @@ export default function Quiz() {
   };
 
   const handleMultipleSelect = (id: string, value: string, isSelected: boolean) => {
-    const currentAnswers = (answers[id] as string[]) || [];
-    if (isSelected) {
-      setAnswers({ ...answers, [id]: [...currentAnswers, value] });
-    } else {
-      setAnswers({ ...answers, [id]: currentAnswers.filter(item => item !== value) });
-    }
-    console.log(`Respostas múltiplas para ${id}:`, answers[id]);
-    // PARA MÚLTIPLA ESCOLHA, VOCÊ PODE AVANÇAR AUTOMATICAMENTE OU TER UM BOTÃO SEPARADO
-    // POR ENQUANTO, VAMOS DEIXAR SEM AVANÇO AUTOMÁTICO PARA VOCÊ CONTROLAR
+    setAnswers(prevAnswers => {
+      const currentAnswers = (prevAnswers[id] as string[]) || [];
+      let newAnswers: string[];
+      if (isSelected) {
+        newAnswers = [...currentAnswers, value];
+      } else {
+        newAnswers = currentAnswers.filter(item => item !== value);
+      }
+      console.log(`Respostas múltiplas para ${id}:`, newAnswers);
+      return { ...prevAnswers, [id]: newAnswers };
+    });
   };
 
   const {
