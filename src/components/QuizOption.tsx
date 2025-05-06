@@ -36,8 +36,7 @@ export default function QuizOption({
       onClick={handleClick}
       className={`w-full p-4 rounded-lg bg-gray-800/50 hover:bg-gray-800
                   flex items-center justify-between text-left transition-colors
-                  ${isSelected ? 'bg-purple-700/70 border-2 border-purple-500' : ''}
-                  ${isMultipleChoice && !isSelected ? 'border-2 border-transparent' : ''}`}
+                  ${isSelected && isMultipleChoice ? 'border-2 border-purple-500' : ''}`}
     >
       <div className="flex items-center gap-3">
         {emoji && <span className="text-2xl">{emoji}</span>}
