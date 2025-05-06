@@ -135,8 +135,8 @@ export default function Summary() {
           <div>
             <h1 className="font-bold mb-6" style={{ fontSize: '2.2rem' }}>
   Com base na sua resposta,
-  você tem <span className="text-purple-400">95% de<br />
-  chance de parar de beber em 1 mês</span>
+  você tem <span className="text-purple-400">95% de chance de<br />
+  parar de beber em 1 mês</span>
 </h1>
             <p className="text-gray-400 mb-8 lg:mb-0">
               Aqui está o que prevemos com base em 24.000 usuários com perfil semelhante
