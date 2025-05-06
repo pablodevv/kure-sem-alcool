@@ -12,11 +12,7 @@ interface QuizState {
   age: number | null;
   email: string | null;
   setGender: (gender: string) => void;
-  setAnswer: (question: string, answer: any) =>
-    set((state) => ({
-      answers: { ...state.answers, [question]: answer },
-      // REMOVEU O INCREMENTO DO currentStep AQUI
-    })),
+  setAnswer: (question: string, answer: any) => void;
   nextStep: () => void;
   previousStep: () => void;
   setLoading: (loading: boolean) => void;
@@ -44,10 +40,10 @@ const initialState = {
 export const useQuizStore = create<QuizState>((set) => ({
   ...initialState,
   setGender: (gender) => set({ gender }),
-  : (question, answer) =>
+  setAnswer: (question, answer) =>
     set((state) => ({
       answers: { ...state.answers, [question]: answer },
-      currentStep: state.currentStep + 1
+      // REMOVEU O INCREMENTO DO currentStep AQUI
     })),
   nextStep: () => set((state) => ({ currentStep: state.currentStep + 1 })),
   previousStep: () => set((state) => ({ currentStep: state.currentStep - 1 })),
