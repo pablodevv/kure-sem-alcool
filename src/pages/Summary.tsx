@@ -253,7 +253,7 @@ export default function Summary() {
       <Wine className="w-6 h-6 text-purple-400" />
       <div>
         <h4 className="font-semibold">Visão definitiva</h4>
-        <p className="text-gray-400">{answers?.eating_habits || 'Alimentação irregular'}</p> {/* Use 'eating_habits' */}
+        <p className="text-gray-400">{answers?.activity_level || 'Alimentação irregular'}</p> {/* Use 'eating_habits' */}
       </div>
     </div>
     <div className="flex items-center gap-4">
