@@ -490,7 +490,7 @@ export default function Quiz() {
  const handleSingleSelect = (id: string, value: string) => {
     setAnswers({ ...answers, [id]: value });
     console.log(`Resposta única para ${id}:`, value);
-    // A LÓGICA DE AVANÇAR PARA PERGUNTAS ÚNICAS AGORA ESTÁ NO BOTÃO "Avançar"
+    // A LÓGICA DE AVANÇAR PARA PERGUNTAS ÚNICAS FOI MOVIDA PARA O onSelect DO QuizOption
   };
 
   const handleMultipleSelect = (id: string, value: string, isSelected: boolean) => {
@@ -657,61 +657,52 @@ const SKIP_EMAIL_SCREEN = true;
                 </p>
               )}
 
-              <div className="w-full max-w-2xl space-y-4">
-                {currentQ.options?.map((option, index) => (
-                  <QuizOption
-                    key={index}
-                    label={option.label}
-                    emoji={option.emoji}
-                    subtitle={option.subtitle}
-                    value={option.value}
-                    isMultipleChoice={currentQ.multipleChoice || false}
-                    onSelect={(value) => handleSingleSelect(currentQ.id, value)}
-                    onMultipleSelect={(value, isSelected) => handleMultipleSelect(currentQ.id, value, isSelected)}
-                    isSelected={
-                      currentQ.multipleChoice
-                        ? (answers[currentQ.id] as string[])?.includes(option.value)
-                        : answers[currentQ.id] === option.value
+             <div className="w-full max-w-2xl space-y-4">
+              {currentQ.options?.map((option, index) => (
+                <QuizOption
+                  key={index}
+                  label={option.label}
+                  emoji={option.emoji}
+                  subtitle={option.subtitle}
+                  value={option.value}
+                  isMultipleChoice={currentQ.multipleChoice || false}
+                  onSelect={(value) => {
+                    handleSingleSelect(currentQ.id, value);
+                    if (!currentQ.multipleChoice) { // AVANÇA AUTOMATICAMENTE SE NÃO FOR MÚLTIPLA ESCOLHA
+                      if (currentQuestion < questions.length - 1) {
+                        setCurrentQuestion(prev => prev + 1);
+                      } else {
+                        setProcessingAnswers(true);
+                      }
                     }
-                  />
-                ))}
-                {currentQ.multipleChoice && currentQ.options && (
-                  <motion.button
-                    onClick={() => {
-                      if ((answers[currentQ.id] as string[])?.length > 0) {
-                        if (currentQuestion < questions.length - 1) {
-                          setCurrentQuestion(prev => prev + 1);
-                        } else {
-                          setProcessingAnswers(true);
-                        }
+                  }}
+                  onMultipleSelect={(value, isSelected) => handleMultipleSelect(currentQ.id, value, isSelected)}
+                  isSelected={
+                    currentQ.multipleChoice
+                      ? (answers[currentQ.id] as string[])?.includes(option.value)
+                      : answers[currentQ.id] === option.value
+                  }
+                />
+              ))}
+              {currentQ.multipleChoice && currentQ.options && (
+                <motion.button
+                  onClick={() => {
+                    if ((answers[currentQ.id] as string[])?.length > 0) {
+                      if (currentQuestion < questions.length - 1) {
+                        setCurrentQuestion(prev => prev + 1);
                       } else {
-                        console.log("Por favor, selecione ao menos uma opção.");
+                        setProcessingAnswers(true);
                       }
-                    }}
-                    className="w-full p-4 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors"
-                  >
-                    Avançar
-                  </motion.button>
-                )}
-                {!currentQ.multipleChoice && currentQ.options && (
-                  <motion.button
-                    onClick={() => {
-                      if (answers[currentQ.id]) {
-                        if (currentQuestion < questions.length - 1) {
-                          setCurrentQuestion(prev => prev + 1);
-                        } else {
-                          setProcessingAnswers(true);
-                        }
-                      } else {
-                        console.log("Por favor, selecione uma opção.");
-                      }
-                    }}
-                    className="w-full p-4 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors"
-                  >
-                    Avançar
-                  </motion.button>
-                )}
-              </div>
+                    } else {
+                      console.log("Por favor, selecione ao menos uma opção.");
+                    }
+                  }}
+                  className="w-full p-4 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors mt-4"
+                >
+                  Avançar
+                </motion.button>
+              )}
+            </div>
             </motion.div>
           )}
             </div>
