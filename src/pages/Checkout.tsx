@@ -54,35 +54,35 @@ const plans: Plan[] = [
 ];
 
 const features = [
-  'App digital criado por especialistas em hipnose, neurociência e vício em comida',
+  'Aplicativo digital criado por especialistas em hipnose, neurociência e vício em comida',
   'Introdução às sessões de hipnose',
-  'Sessões diárias personalizadas de hipnoterapia antes de dormir',
-  'Programa especial de 21 dias para perda de peso acelerada',
-  'Suporte ao cliente 24/7',
+  'Sessões personalizadas de hipnoterapia na hora de dormir',
+  'Programas especiais de 21 dias projetados para libertá-lo dos desejos por álcool',
+  'Suporte completo ao cliente 24 horas por dia, 7 dias por semana',
   'Garantia de privacidade e segurança',
   'Acompanhamento do progresso'
 ];
 
 const reviews = [
   {
-    name: 'Júlia R.',
+    name: 'Marcia R.',
     date: '27 Jun 2024',
-    text: 'Kure mudou meu corpo de maneiras que eu não poderia imaginar. Recomendo para todas as garotas que procuram algo diferente que realmente funciona!',
-    image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_1.82f0a538.png&w=750&q=75',
+    text: 'Kure me ajudou a finalmente parar de beber. A hipnose me deu controle sobre meus desejos e me sinto muito mais livre agora!',
+    image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_6.62bff7cf.png&w=1920&q=75',
     stars: 5
   },
   {
     name: 'José S.',
     date: '24 Jun 2024',
-    text: 'Finalmente parei de comer compulsivamente e comecei a me exercitar. Kure foi a única coisa que funcionou para mim.',
-    image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_2.309d2518.png&w=750&q=75',
+    text: 'Kure me ajudou a clarear a mente e a retomar a vida. Parei de beber sem estresse e me sinto mais saudável e equilibrado do que nunca.',
+    image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_2.309d2518.png&w=1920&q=75',
     stars: 5
   },
   {
     name: 'Simone G.',
     date: '19 Jun 2024',
-    text: 'Experiência fenomenal. O app Kure é a principal razão por trás da minha mudança. Ser saudável agora é tão fácil, vem naturalmente.',
-    image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_3.6d5340ab.png&w=750&q=75',
+    text: 'Eu estava cética, mas o Kure realmente funcionou. Em 21 dias, parei de beber sem dificuldade. É incrível como foi eficaz!',
+    image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_7.afc42c30.png&w=1920&q=75',
     stars: 5
   }
 ];
@@ -373,7 +373,7 @@ const handleGetBottomPlan = () => {
           <p>Mais de 345.000 programas vendidos.</p>
         </div>
         <h1 className="text-4xl font-serif mb-12 text-center max-w-2xl mx-auto">
-          Obtenha sessões personalizadas de hipnoterapia para seu sucesso na perda de peso!
+          Obtenha um programa de hipnoterapia personalizado para ajudá-lo a parar de beber para sempre
         </h1>
 
         {renderPlansSection()}
@@ -436,7 +436,7 @@ const handleGetBottomPlan = () => {
           </div>
 
           <h2 className="text-3xl mb-12 text-center">
-            Por que os <span className="text-purple-400">Clientes</span> amam o app <span className="text-purple-400">Kure</span>
+            Por que os <span className="text-purple-400">Clientes</span> amam o aplicativo <span className="text-purple-400">Kure</span>
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
