@@ -487,15 +487,10 @@ export default function Quiz() {
 
   const [answers, setAnswers] = useState<{ [key: string]: string | string[] }>({});
 
-  const handleSingleSelect = (id: string, value: string) => {
+ const handleSingleSelect = (id: string, value: string) => {
     setAnswers({ ...answers, [id]: value });
     console.log(`Resposta única para ${id}:`, value);
-    // MANTENHA A SUA LÓGICA DE AVANÇAR AQUI:
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(prev => prev + 1);
-    } else {
-      setProcessingAnswers(true);
-    }
+    // A LÓGICA DE AVANÇAR PARA PERGUNTAS ÚNICAS AGORA ESTÁ NO BOTÃO "Avançar"
   };
 
   const handleMultipleSelect = (id: string, value: string, isSelected: boolean) => {
@@ -506,6 +501,8 @@ export default function Quiz() {
       setAnswers({ ...answers, [id]: currentAnswers.filter(item => item !== value) });
     }
     console.log(`Respostas múltiplas para ${id}:`, answers[id]);
+    // PARA MÚLTIPLA ESCOLHA, VOCÊ PODE AVANÇAR AUTOMATICAMENTE OU TER UM BOTÃO SEPARADO
+    // POR ENQUANTO, VAMOS DEIXAR SEM AVANÇO AUTOMÁTICO PARA VOCÊ CONTROLAR
   };
 
   const {
@@ -640,45 +637,83 @@ const SKIP_EMAIL_SCREEN = true;
                   errorMessage={currentQ.errorMessage}
                   validateFn={currentQ.id === 'target_weight' ? (value: number) => value < currentWeight : undefined}
                 />
+
+            
               ) : (
-                <motion.div
-                  key={currentQ.id}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="flex flex-col items-center gap-8"
-                >
-                  <h2 className="text-3xl font-semibold text-center">
-                    {currentQ.title}
-                  </h2>
+            <motion.div
+              key={currentQ.id}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              className="flex flex-col items-center gap-8"
+            >
+              <h2 className="text-3xl font-semibold text-center">
+                {currentQ.title}
+              </h2>
 
-                  {currentQ.subtitle && (
-                    <p className="text-gray-400 text-center max-w-2xl">
-                      {currentQ.subtitle}
-                    </p>
-                  )}
-
-                  <div className="w-full max-w-2xl space-y-4">
-                    {currentQ.options?.map((option, index) => (
-                     <QuizOption
-              key={index}
-              label={option.label}
-              emoji={option.emoji}
-              subtitle={option.subtitle}
-              value={option.value} // IMPORTANTE: Passe o 'value' da opção
-              isMultipleChoice={currentQ.multipleChoice || false} // IMPORTANTE: Passe se a pergunta é de múltipla escolha
-              onSelect={(value) => handleSingleSelect(currentQ.id, value)} // IMPORTANTE: Passe a função para seleção única
-              onMultipleSelect={(value, isSelected) => handleMultipleSelect(currentQ.id, value, isSelected)} // IMPORTANTE: Passe a função para múltipla escolha
-              isSelected={
-                currentQ.multipleChoice
-                  ? (answers[currentQ.id] as string[])?.includes(option.value)
-                  : answers[currentQ.id] === option.value
-              }
-            />
-                    ))}
-                  </div>
-                </motion.div>
+              {currentQ.subtitle && (
+                <p className="text-gray-400 text-center max-w-2xl">
+                  {currentQ.subtitle}
+                </p>
               )}
+
+              <div className="w-full max-w-2xl space-y-4">
+                {currentQ.options?.map((option, index) => (
+                  <QuizOption
+                    key={index}
+                    label={option.label}
+                    emoji={option.emoji}
+                    subtitle={option.subtitle}
+                    value={option.value}
+                    isMultipleChoice={currentQ.multipleChoice || false}
+                    onSelect={(value) => handleSingleSelect(currentQ.id, value)}
+                    onMultipleSelect={(value, isSelected) => handleMultipleSelect(currentQ.id, value, isSelected)}
+                    isSelected={
+                      currentQ.multipleChoice
+                        ? (answers[currentQ.id] as string[])?.includes(option.value)
+                        : answers[currentQ.id] === option.value
+                    }
+                  />
+                ))}
+                {currentQ.multipleChoice && currentQ.options && (
+                  <motion.button
+                    onClick={() => {
+                      if ((answers[currentQ.id] as string[])?.length > 0) {
+                        if (currentQuestion < questions.length - 1) {
+                          setCurrentQuestion(prev => prev + 1);
+                        } else {
+                          setProcessingAnswers(true);
+                        }
+                      } else {
+                        console.log("Por favor, selecione ao menos uma opção.");
+                      }
+                    }}
+                    className="w-full p-4 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+                  >
+                    Avançar
+                  </motion.button>
+                )}
+                {!currentQ.multipleChoice && currentQ.options && (
+                  <motion.button
+                    onClick={() => {
+                      if (answers[currentQ.id]) {
+                        if (currentQuestion < questions.length - 1) {
+                          setCurrentQuestion(prev => prev + 1);
+                        } else {
+                          setProcessingAnswers(true);
+                        }
+                      } else {
+                        console.log("Por favor, selecione uma opção.");
+                      }
+                    }}
+                    className="w-full p-4 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+                  >
+                    Avançar
+                  </motion.button>
+                )}
+              </div>
+            </motion.div>
+          )}
             </div>
           </motion.div>
         )}
