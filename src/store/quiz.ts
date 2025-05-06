@@ -43,7 +43,7 @@ export const useQuizStore = create<QuizState>((set) => ({
   setAnswer: (question, answer) =>
     set((state) => ({
       answers: { ...state.answers, [question]: answer },
-      // REMOVEU O INCREMENTO DO currentStep AQUI
+      currentStep: state.currentStep + 1, // VOLTEI A INCREMENTAR AQUI!
     })),
   nextStep: () => set((state) => ({ currentStep: state.currentStep + 1 })),
   previousStep: () => set((state) => ({ currentStep: state.currentStep - 1 })),
