@@ -4,16 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import { Gauge, Star, Check, Cookie, UtensilsCrossed, Frown, Brain } from 'lucide-react';
 import { useQuizStore } from '../store/quiz';
 
-const generateChartData = (startWeight: number, targetWeight: number) => {
-  const difference = startWeight - targetWeight;
-  const step = difference / 4;
-
-  return [
-    { week: 'Começo', kure: startWeight, other: startWeight },
-    { week: 'Semana 2', kure: startWeight - step, other: startWeight - (step * 0.5) },
-    { week: 'Semana 4', kure: startWeight - (step * 2), other: startWeight - (step * 0.7) },
-    { week: 'Semana 8', kure: targetWeight, other: startWeight - step },
-  ];
+const generateChartData = () => {
+return [
+{ week: 'Início', kure: 90, other: 90 },
+{ week: 'Semana 2', kure: 70, other: 85 },
+{ week: 'Semana 4', kure: 40, other: 80 },
+{ week: 'Semana 8', kure: 10, other: 75 },
+];
 };
 
 const weeklyPlan = [
