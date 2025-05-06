@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Label } from 'recharts';
 import { useNavigate } from 'react-router-dom';
-import { Gauge, Star, Check, Cookie, UtensilsCrossed, Frown, Brain, BicepsFlexed } from 'lucide-react';
+import { Gauge, Star, Check, Cookie, UtensilsCrossed, Frown, Brain, Wine } from 'lucide-react';
 import { useQuizStore } from '../store/quiz';
 
 const generateChartData = () => {
@@ -250,7 +250,7 @@ export default function Summary() {
       </div>
     </div>
     <div className="flex items-center gap-4 mb-4">
-      <BicepsFlexed className="w-6 h-6 text-purple-400" />
+      <Wine className="w-6 h-6 text-purple-400" />
       <div>
         <h4 className="font-semibold">Visão definitiva</h4>
         <p className="text-gray-400">{answers?.eating_habits || 'Alimentação irregular'}</p> {/* Use 'eating_habits' */}
