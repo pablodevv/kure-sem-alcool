@@ -167,280 +167,297 @@ function EmailCollection({ onSubmit }: { onSubmit: (email: string) => void }) {
 const questions = [
   {
     id: 'outcome',
-    title: 'Qual resultado positivo da perda de peso você mais espera?',
+    title: 'Por que você quer parar de beber?',
     options: [
-      { label: 'Aumento da autoestima', emoji: '🌟' },
-      { label: 'Maior facilidade de movimento', emoji: '🏃‍♂️' },
-      { label: 'Melhor aparência', emoji: '✨' },
-      { label: 'Aumento da longevidade', emoji: '🌱' },
-      { label: 'Outro', emoji: '➕' }
+      { label: 'Melhorar minha saúde geral', emoji: '🧬' },
+      { label: 'Perder peso', emoji: '🧘‍♀️' },
+      { label: 'Dormir melhor', emoji: '😴' },
+      { label: 'Aumentar meus níveis de energia', emoji: '🚀' },
+      { label: 'Melhorar minha clareza mental', emoji: '🧠' }´,
+      { label: 'Fortalecer meus relacionamentos', emoji: '💜' }´,
+      { label: 'Economizar dinheiro', emoji: '💰' }´,
+      { label: 'Outro', emoji: '🤔' }´
     ]
   },
   {
     id: 'previous_attempts',
-    title: 'Você já tentou perder peso antes?',
+    title: 'Você já tentou parar de beber álcool antes?',
     options: [
-      { label: 'Sim, mas só tive sucesso por um tempo limitado', emoji: '😕' },
-      { label: 'Tentei, mas não consegui alcançar meu peso ideal', emoji: '😔' },
-      { label: 'Ainda não', emoji: '😬' }
+      { label: 'Sim, uma vez' },
+      { label: 'Sim, várias vezes' },
+      { label: 'Não, esta é minha primeira tentativa' }
     ]
   },
+
+{
+    id: 'impacto', 
+    title: 'O álcool impactou algum desses aspectos da sua vida?',
+    options: [
+      { label: 'Isolamento ou afastamento dos outros' },
+      { label: 'Libido ou saúde sexual' },
+      { label: 'Relações ou conexões sociais' },
+      { label: 'Autoestima ou autovalor' },
+      { label: 'Maus hábitos alimentares ou estilo de vida pouco saudável' }
+    ]
+  },
+
+
+  {
+    id: 'weight_cause',
+    title: 'Qual você acredita ser a principal causa do seu consumo de álcool?',
+    options: [
+      { label: 'Dor Emocional / Trauma', emoji: '💔' },
+      { label: 'Estresse / Ansiedade', emoji: '😩' },
+      { label: 'Pressão social', emoji: '🍻' },
+      { label: 'Fuga da realidade', emoji: '😶‍🌫️' },
+      { label: 'História da Família / Genética', emoji: '👨‍👩‍👧' },
+      { label: 'Tédio ou falta de propósito', emoji: '🤷‍♀️' },
+      { label: 'Outro', emoji: '🤔' }
+    ]
+  },
+  
+  
   {
     type: 'info',
     id: 'root_cause',
-    image: "https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finfo_1_main.26296a6a.png&w=3840&q=75",
-    title: 'Dessa vez, vai ser diferente. Estamos mirando na causa raiz.',
+    image: "https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fno-alco-info-1-mobile.581f05a5.png&w=1920&q=75",
+    title: 'Desta vez, você vai se libertar. Estamos tratando da causa raiz.',
     content: (
   <>
-    <p style={{ color: '#c4afff' }}>Já ouviu o ditado "Está tudo na sua cabeça?" ou "Seu intestino é seu segundo cérebro"?</p>
-    <p className="mt-4">
-      Comer por estresse, reações intestinais incomuns ou borboletas no estômago quando nervoso são todos sinais da conexão intestino-cérebro.
-    </p>
+    <p style={{ color: '#c4afff' }}>Já ouviu alguém dizer: "Você só precisa se controlar mais" ou "Por que você não bebe menos"?</p>
+
     <p className="mt-4" style={{ color: '#c4afff' }}>
-      A mente subconsciente influenciando a má comunicação entre o intestino e o cérebro é o fator chave que causa o sobrepeso e faz más escolhas alimentares*.
+      Reduzir o consumo de álcool não é uma questão de força de vontade, mas sim de padrões subconscientes mais profundos.
     </p>
+
+      
     <p className="mt-4">
-      Mais de 50.000 usuários começam o curso de auto-hipnose Kure todos os meses, reequilibrando com sucesso sua conexão intestino-cérebro eliminando padrões de pensamento negativos e superando obstáculos subconscientes.
+      Por meio desse programa de hipnoterapia de 21 dias, ajudamos você a reconectar sua mente, abordando a causa raiz de seus padrões e capacitando você a retomar o controle - sem julgamento ou culpa.
     </p>
+    
+    
+    
+    <p className="mt-4">
+      Mais de 110.000 usuários já transformaram sua relação com o álcool usando essa abordagem.
+    </p>
+    
     <blockquote className="mt-6 border-l-4 border-purple-500 pl-4 italic">
-      "Fiquei chocada com a eficácia desse aplicativo de hipnose." - Elena, usando o app Kure desde 2024.
+      "Agora consigo passar uma noite inteira sem pensar em álcool e, como bônus, perdi 5 quilos!" - Sara, começou a usar Kure em dezembro de 2024
     </blockquote>
-    <p className="mt-8 text-sm text-gray-400">
-          *Fonte: *Nutrients. Fevereiro de 2021; 13(2): 584.
-        </p>
+    
   </>
 )
     
   },
-  {
-    id: 'referral',
-    title: 'Você foi indicado ao Kure por um nutricionista ou psicólogo TCC?',
-    subtitle: 'A hipnose é um método cientificamente comprovado para resolver problemas relacionados à nutrição e questões psicológicas.',
-    options: [
-      { label: 'Sim', emoji: '👍' },
-      { label: 'Não', emoji: '👎' }
-    ]
-  },
-  {
-    id: 'weight_cause',
-    title: 'Qual você acha que é a principal causa do seu ganho de peso atual?',
-    options: [
-      { label: 'Alimentação não saudável', emoji: '🍔' },
-      { label: 'Maus hábitos alimentares', emoji: '😐' },
-      { label: 'Falta de força de vontade', emoji: '😔' },
-      { label: 'Menopausa', emoji: '👵' },
-      { label: 'Gravidez', emoji: '🤰' },
-      { label: 'Relacionado ao estresse', emoji: '😰' },
-      { label: 'Produtos farmacêuticos', emoji: '💊' },
-      { label: 'Outro', emoji: '🤔' }
-    ]
-  },
-  {
+
+
+{
     id: 'struggle_duration',
-    title: 'Há quanto tempo você está lutando com essa situação?',
+    title: 'Há quanto tempo você bebe álcool?',
     options: [
-      { label: '0-6 meses', emoji: '😐' },
-      { label: '6-12 meses', emoji: '🙁' },
-      { label: '1-5 anos', emoji: '😪' },
-      { label: '5+ anos', emoji: '😭' }
+      { label: 'Menos de um ano' },
+      { label: '1-3 anos' },
+      { label: '3-5 anos' },
+      { label: 'Mais de 5 anos' }
     ]
   },
-  {
-    id: 'physical_symptom',
-    title: 'Qual sintoma físico do excesso de peso mais te afeta?',
+
+
+{
+    id: 'eating_habits',
+    title: 'Com que frequência você consome álcool atualmente?',
     options: [
-      { label: 'Falta de ar', emoji: '😮‍💨' },
-      { label: 'Ronco', emoji: '😪' },
-      { label: 'Mobilidade reduzida', emoji: '🚶' },
-      { label: 'Dor física', emoji: '😳' },
-      { label: 'Não tenho certeza', emoji: '🤔' }
+      { label: 'Diariamente' },
+      { label: 'Algumas vezes por semana' },
+      { label: 'Uma vez por semana' },
+      { label: 'Ocasionalmente' },
+      { label: 'Raramente' }
     ]
   },
+
+
+{
+    id: 'food_craving',
+    title: 'Quanta bebida alcoólica você costuma beber?',
+    options: [
+      { label: 'Um copo de vinho/cerveja' },
+      { label: 'Algumas cervejas ou coquetéis' },
+      { label: 'Muitas vezes terminando uma garrafa inteira' },
+      { label: 'Beber muito e perder a noção de quanto consumo' }
+    ]
+  },
+
+
+
+
   {
     id: 'life_impact',
     title: 'Existem outros aspectos da sua vida que foram impactados negativamente pelo seu peso?',
     subtitle: 'Selecione o que mais te afeta.',
     options: [
-      { label: 'Tensão constante', emoji: '😣' },
-      { label: 'Libido reduzida', emoji: '💔' },
-      { label: 'Desafios em formar conexões românticas', emoji: '👥' },
-      { label: 'Dificuldades de socialização', emoji: '👯‍♀️' },
-      { label: 'Não tenho certeza', emoji: '🤔' }
+      { label: 'Manhã' },
+      { label: 'Tarde' },
+      { label: 'Noite' },
+      { label: 'Tarde da noite' }
     ]
   },
+
+
+{
+    id: 'physical_symptom',
+    title: 'Quais destes sintomas você sente regularmente?',
+    options: [
+      { label: 'Tremores' },
+      { label: 'Náuseas / vômitos' },
+      { label: 'Insônia' },
+      { label: 'Dores de cabeça' },
+      { label: 'Suando excessivamente' },
+      { label: 'Sensação de fraqueza' },
+      { label: 'Perda de memória ou confusão' },
+      { label: 'Outro' }
+    ]
+  },
+
+
+
+
   {
     type: 'info',
     id: 'transformation',
-    title: 'A transformação do corpo começa na mente',
+    title: '87% dos usuários com respostas como as suas recuperaram com sucesso o controle sobre a bebida',
     content: (
   <>
-    <p>Métodos tradicionais como dietas ou exercícios frequentemente falham em criar resultados duradouros. O aplicativo Kure identifica a causa raiz subconsciente do ganho de peso e a elimina. <span style={{ color: '#c4afff' }}>É a solução de perda de peso mais eficiente.</span></p>
-    <p className="mt-4">Complete o quiz e receba seu programa personalizado de hipnoterapia de 21 dias:</p>
+    <p>Métodos tradicionais, como força de vontade apenas ou grupos de apoio, muitas vezes não conseguem criar mudanças duradouras.</p>
+    <p className="mt-4">O aplicativo Kure identifica as causas subconscientes do vício em álcool, como estresse, gatilhos emocionais ou hábitos, e ajuda você a reprogramar sua mente para se libertar e alcançar a sobriedade duradoura.</p>
+    <p className="mt-4" style={{ color: '#c4afff' }}>É a maneira mais fácil de parar de beber álcool para sempre.</p>
+  
   </>
 ),
     image: "https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finfo_2_main.53943ace.png&w=3840&q=75",
     showRating: true
   },
-  {
-    id: 'eating_habits',
-    title: 'Com qual dos seguintes hábitos alimentares você mais se identifica?',
-    subtitle: 'A hipnose Kure focará na remoção desse hábito alimentar não saudável.',
-    options: [
-      { label: 'Alimentação irregular', emoji: '⏰' },
-      { label: 'Compulsão alimentar / beliscar constantemente', emoji: '🍪' },
-      { label: 'Porções muito grandes de comida', emoji: '🍽️' },
-      { label: 'Vício em açúcar', emoji: '🍫' },
-      { label: 'Não sei cozinhar de forma saudável e saborosa', emoji: '👩‍🍳' },
-      { label: 'Outro', emoji: '🤔' }
-    ]
-  },
-  {
-    id: 'food_craving',
-    title: 'Qual desejo por comida você mais gostaria de parar?',
-    subtitle: 'A hipnose Kure focará no bloqueio desse desejo por comida.',
-    options: [
-      { label: 'Doces / chocolate', emoji: '🍫' },
-      { label: 'Salgadinhos', emoji: '🥨' },
-      { label: 'Produtos lácteos', emoji: '🧀' },
-      { label: 'Fast food', emoji: '🍔' },
-      { label: 'Bebidas açucaradas', emoji: '🥤' },
-      { label: 'Outro', emoji: '🤔' }
-    ]
-  },
+  
+  
+
   {
     id: 'internal_belief',
-    title: 'Qual crença interna mais te impede de perder peso?',
-    subtitle: 'A hipnose Kure vai te libertar dessa limitação mental',
+    title: 'Quais são as crenças limitantes que estão impedindo você de parar de beber?',
     options: [
-      { label: 'Me falta força de vontade', emoji: '😩' },
-      { label: 'Sinto que DEVO limpar o prato', emoji: '🍽️' },
-      { label: 'Qual o sentido? Se eu tentar, vou falhar', emoji: '😔' },
-      { label: 'Sempre fui assim', emoji: '🙄' },
-      { label: 'Sinto que não mereço melhorar', emoji: '😞' },
-      { label: 'Não tenho certeza', emoji: '🤔' }
+      { label: '"Preciso de álcool para relaxar ou lidar com o estresse."', emoji: '💆‍♀️' },
+      { label: '"Não consigo me divertir ou socializar sem beber."', emoji: '🥳' },
+      { label: '"Qual é o sentido? Se eu tentar, vou falhar."', emoji: '🤷‍♀️' },
+      { label: '"O álcool faz parte da minha identidade ou de quem eu sou."', emoji: '😞' },
+      { label: '"Tenho medo de enfrentar minhas emoções sem álcool."', emoji: '🙈' },
+      { label: '"Eu não mereço uma vida melhor."', emoji: '😔' },
+      { label: '"Meus amigos ou familiares esperam que eu beba."', emoji: '🕺' },
+      { label: 'Incerto', emoji: '🤔' }
     ]
   },
+
+
+
+      {
+    id: 'life_impact',
+    title: 'Que tipo de sistema de suporte você tem atualmente?',
+    options: [
+      { label: 'Amigos / Família' },
+      { label: 'Ajuda profissional (por exemplo, terapeuta, coach)' },
+      { label: 'Comunidades online' },
+      { label: 'Nenhum por enquanto' }
+    ]
+  },
+
+  
+
+
   {
+    id: 'activity_level',
+    title: 'Qual é sua visão máxima para uma vida sem álcool?',
+    options: [
+      { label: 'Sentindo-se mais saudável e com mais energia', emoji: '🌱' },
+      { label: 'Estar mais presente com os entes queridos', emoji: '💞' },
+      { label: 'Alcançar objetivos profissionais ou pessoais', emoji: '🚀' },
+      { label: 'Recuperando o controle e a confiança', emoji: '💪' },
+      { label: 'Outro', emoji: '🤔' }
+    ]
+  },
+
+  
+
+
+{
     id: 'hypnosis_knowledge',
-    title: 'Você já ouviu falar sobre hipnose ajudando pessoas a mudarem seu comportamento?',
+    title: 'Você já ouviu falar que a hipnose ajuda as pessoas a mudar seu comportamento?',
     options: [
-      { label: 'Sim', emoji: '✅' },
+      { label: 'Sim', emoji: '👍' },
       { label: 'Não tenho certeza', emoji: '🤔' }
     ]
   },
+
+  
   {
+    id: 'referral',
+    title: 'Você foi encaminhado para Kure por um nutricionista ou terapeuta cognitivo comportamental?',
+    subtitle: 'A hipnose é um método cientificamente comprovado para resolver problemas relacionados à nutrição e questões psicológicas.',
+    options: [
+      { label: 'Sim' },
+      { label: 'Não' }
+    ]
+  },
+
+
+
+
+    {
     type: 'info',
     id: 'how_it_works',
-    title: 'Como o Kure vai te ajudar?',
+    title: 'Pare de beber álcool enquanto dorme',
     content: (
       <>
-        <p>Nossas sessões de hipnose personalizadas vão remover as principais razões por trás do seu ganho de peso.</p>
+        <p>Nossas sessões personalizadas de hipnose ajudarão você a lidar com os principais fatores que impulsionam sua dependência de álcool:</p>
         <ul className="space-y-2 mt-4">
           <li className="flex items-center gap-2">
             <span className="text-purple-500">✓</span>
-            Sem mais desejos por comida
+            Elimine os desejos por álcool
           </li>
           <li className="flex items-center gap-2">
             <span className="text-purple-500">✓</span>
-            Bloqueio de maus hábitos alimentares
+            Quebre hábitos e rotinas pouco saudáveis
           </li>
           <li className="flex items-center gap-2">
             <span className="text-purple-500">✓</span>
-            Remoção de crenças limitantes
+            Supere crenças limitantes sobre parar de fumar
           </li>
           <li className="flex items-center gap-2">
             <span className="text-purple-500">✓</span>
-            Reparo da conexão intestino-cérebro
+            Restaure o equilíbrio entre sua mente e seu corpo
           </li>
         </ul>
         <p className="mt-4">
-          Simplesmente abra o aplicativo Kure e ouça uma sessão relaxante de hipnose antes de dormir.
+          Basta abrir o aplicativo Kure e ouvir uma sessão de hipnose relaxante antes de dormir.
         </p>
         <p className="mt-4">
-          <span style={{ color: '#c4afff' }}>É quase como perder peso enquanto dorme.</span>
+          <span style={{ color: '#c4afff' }}>É quase como parar de beber álcool enquanto dorme.</span>
         </p>
         <p className="mt-4">
-          Estudos de pesquisa médica e dados de usuários Kure sugerem que a hipnose é perfeitamente segura e permite que você alcance melhores e duradouros resultados de perda de peso*.
+          Estudos de pesquisa médica e dados de usuários do Kure indicam que a hipnose é completamente segura e pode ajudar você a alcançar a liberdade duradoura do vício do álcool.*
         </p>
         <p className="mt-8 text-sm text-gray-400">
-          *Fonte: Journal of Integrative Medicine Volume 19, Issue 1, Janeiro de 2021, Páginas 1-5.
+          *Fonte: Journal of Integrative Medicine Volume 19, Edição 1, Janeiro de 2021, Páginas 1-5.
         </p>
       </>
     ),
     image: "https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finfo_3_main_mobile.db09b2e6.png&w=1920&q=75"
   },
-  {
-    id: 'activity_level',
-    title: 'Qual é seu nível atual de atividade física?',
-    subtitle: 'Responda as últimas perguntas para ver quão rapidamente você pode atingir seus objetivos de peso.',
-    options: [
-      {
-        label: 'Sedentário ou menos',
-        subtitle: 'Trabalho no escritório e muito pouco ou nenhum exercício semanal.',
-        emoji: '😐'
-      },
-      {
-        label: 'Levemente ativo',
-        subtitle: 'Trabalho no escritório e exercício uma vez por semana',
-        emoji: '🚶'
-      },
-      {
-        label: 'Moderadamente ativo',
-        subtitle: 'Trabalho ativo ou exercício diário',
-        emoji: '🧘‍♀️'
-      },
-      {
-        label: 'Muito ativo',
-        subtitle: 'Trabalho ativo e/ou 1 hora de exercício diário',
-        emoji: '🏃'
-      },
-      {
-        label: 'Extremamente ativo',
-        subtitle: '3-5 treinos por semana',
-        emoji: '🏋️'
-      }
-    ]
-  },
-  {
-    type: 'number',
-    id: 'height',
-    title: 'Qual é sua altura?',
-    subtitle: 'Será usado para calcular seu IMC e previsão de perda de peso.',
-    unit: 'cm',
-    min: 120,
-    errorMessage: 'Infelizmente, este produto não é adequado para usuários abaixo de 120 cm'
-  },
-  {
-    type: 'number',
-    id: 'weight',
-    title: 'Quanto você pesa?',
-    subtitle: 'Será usado para calcular seu IMC e previsão de perda de peso.',
-    unit: 'kg',
-    min: 40,
-    errorMessage: 'Por favor, insira um valor maior'
-  },
-  {
-    type: 'number',
-    id: 'target_weight',
-    title: 'Qual é seu peso desejado?',
-    subtitle: 'Isso nos ajudará a personalizar um programa específico para você. Mais de 90% dos usuários Kure atingem seu peso desejado.',
-    unit: 'kg',
-    errorMessage: 'O peso desejado deve ser menor que seu peso atual'
-  },
-  {
-    type: 'number',
-    id: 'age',
-    title: 'Qual é sua idade?',
-    subtitle: 'A idade nos ajuda nos cálculos metabólicos e personaliza as sugestões do seu programa.',
-    unit: 'anos',
-    min: 18,
-    max: 100,
-    errorMessage: 'Por favor, insira uma idade válida entre 18 e 100 anos'
-  },
+
+  
+
+
+
   {
     id: 'reward',
-    title: 'Imagine alcançar seu objetivo. Como você vai se recompensar?',
-    subtitle: 'Durante momentos desafiadores, lembre-se dessa recompensa como motivação para continuar.',
+    title: 'Imagine atingir sua meta. Como você se recompensará?',
+    subtitle: 'Em tempos desafiadores, lembre-se desta recompensa como motivação para continuar.',
     options: [
       { label: 'Vou fazer um dia de SPA', emoji: '💆' },
       { label: 'Vou contribuir para caridade', emoji: '💖' },
@@ -448,6 +465,10 @@ const questions = [
       { label: 'Vou finalmente fazer aquela viagem linda que sempre sonhei', emoji: '🌴' }
     ]
   }
+
+
+
+  
 ];
 
 export default function Quiz() {
@@ -546,8 +567,8 @@ const SKIP_EMAIL_SCREEN = true;
           <LoadingScreen
             messages={[
               "Analisando suas respostas...",
-              "Calculando sua previsão de perda de peso...",
-              "Criando seu programa personalizado de hipnose..."
+              "Projetando seu sucesso em parar de beber...",
+              "Criando seus cursos de hipnose personalizados..."
             ]}
             onComplete={handleLoadingComplete}
           />
