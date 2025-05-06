@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Label } from 'recharts';
 import { useNavigate } from 'react-router-dom';
-import { Gauge, Star, Check, Cookie, UtensilsCrossed, Frown, Brain } from 'lucide-react';
+import { Gauge, Star, Check, Cookie, UtensilsCrossed, Frown, Brain, BicepsFlexed } from 'lucide-react';
 import { useQuizStore } from '../store/quiz';
 
 const generateChartData = () => {
@@ -243,14 +243,14 @@ export default function Summary() {
 <div className="space-y-8">
   <div className="bg-[#0A061E] p-6 rounded-xl">
     <div className="flex items-center gap-4 mb-4">
-      <Cookie className="w-6 h-6 text-purple-400" />
+      <Star className="w-6 h-6 text-purple-400" />
       <div>
         <h4 className="font-semibold">Probabilidade de sucesso</h4>
-        <p className="text-gray-400">{answers?.food_craving || 'Doces / chocolate'}</p> {/* Use 'food_craving' */}
+        <p className="text-gray-400">95%</p> {/* Use 'food_craving' */}
       </div>
     </div>
     <div className="flex items-center gap-4 mb-4">
-      <UtensilsCrossed className="w-6 h-6 text-purple-400" />
+      <BicepsFlexed className="w-6 h-6 text-purple-400" />
       <div>
         <h4 className="font-semibold">Visão definitiva</h4>
         <p className="text-gray-400">{answers?.eating_habits || 'Alimentação irregular'}</p> {/* Use 'eating_habits' */}
