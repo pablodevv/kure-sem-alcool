@@ -485,17 +485,17 @@ export default function Quiz() {
   const [processingAnswers, setProcessingAnswers] = useState(false);
   const [showEmailCollection, setShowEmailCollection] = useState(false);
 
-  const [answers, setAnswers] = useState<{ [key: string]: string | string[] }>({});
+  const [localAnswers, setLocalAnswers] = useState<{ [key: string]: string | string[] }>({});
 
  const handleSingleSelect = (id: string, value: string) => {
-    setLocalAnswers({ ...localAnswers, [id]: value }); // Mantenha para controle local
+    setLocalAnswers({ ...localAnswers, [id]: value });
     console.log(`Resposta única para ${id}:`, value);
-    setAnswer(id, value); // AGORA O STORE VAI AVANÇAR A PERGUNTA
+    setAnswer(id, value); // ATUALIZA O STORE E AVANÇA
   };
 
   const handleMultipleSelect = (id: string, value: string, isSelected: boolean) => {
-    setLocalAnswers(prevAnswers => { // Mantenha para controle local
-      const currentAnswers = prevAnswers[id] as string[] || [];
+    setLocalAnswers(prevAnswers => {
+      const currentAnswers = (prevAnswers[id] as string[]) || [];
       let newAnswers: string[];
       if (isSelected) {
         newAnswers = [...currentAnswers, value];
@@ -505,8 +505,7 @@ export default function Quiz() {
       console.log(`Respostas múltiplas para ${id}:`, newAnswers);
       return { ...prevAnswers, [id]: newAnswers };
     });
-    // NÃO CHAMAMOS setAnswer AQUI DIRETAMENTE PARA CADA SELEÇÃO MÚLTIPLA
-    // O setAnswer SERÁ CHAMADO QUANDO O BOTÃO "Avançar" FOR CLICADO PARA A MÚLTIPLA ESCOLHA
+    // NÃO CHAMAMOS setAnswer AQUI AINDA!
   };
 
   const {
@@ -662,45 +661,45 @@ const SKIP_EMAIL_SCREEN = true;
               )}
 
              <div className="w-full max-w-2xl space-y-4">
-              {currentQ.options?.map((option, index) => (
-                <QuizOption
-                  key={index}
-                  label={option.label}
-                  emoji={option.emoji}
-                  subtitle={option.subtitle}
-                  value={option.value}
-                  isMultipleChoice={currentQ.multipleChoice || false}
-                  onSelect={(value) => {
-                    handleSingleSelect(currentQ.id, value);
-                    if (!currentQ.multipleChoice) { // AVANÇA AUTOMATICAMENTE SE NÃO FOR MÚLTIPLA ESCOLHA
-                      if (currentQuestion < questions.length - 1) {
-                        setCurrentQuestion(prev => prev + 1);
-                      } else {
-                        setProcessingAnswers(true);
-                      }
-                    }
-                  }}
-                  onMultipleSelect={(value, isSelected) => handleMultipleSelect(currentQ.id, value, isSelected)}
-                  isSelected={
-                    currentQ.multipleChoice
-                      ? (answers[currentQ.id] as string[])?.includes(option.value)
-                      : answers[currentQ.id] === option.value
-                  }
-                />
-              ))}
+            {currentQ.options?.map((option, index) => (
+    <QuizOption
+      key={index}
+      label={option.label}
+      emoji={option.emoji}
+      subtitle={option.subtitle}
+      value={option.value}
+      isSelected={
+        currentQ.multipleChoice
+          ? (localAnswers[currentQ.id] as string[])?.includes(option.value)
+          : localAnswers[currentQ.id] === option.value
+      }
+      isMultipleChoice={currentQ.multipleChoice || false}
+      onSelect={(value) => {
+        handleSingleSelect(currentQ.id, value);
+        if (!currentQ.multipleChoice) { // AVANÇA AUTOMATICAMENTE SE NÃO FOR MÚLTIPLA ESCOLHA
+          if (currentQuestion < questions.length - 1) {
+            setCurrentQuestion(prev => prev + 1);
+          } else {
+            setProcessingAnswers(true);
+          }
+        }
+      }}
+      onMultipleSelect={(value, isSelected) => handleMultipleSelect(currentQ.id, value, isSelected)}
+    />
+  ))}
               {currentQ.multipleChoice && currentQ.options && (
                 <motion.button
-    onClick={() => {
-      if ((localAnswers[currentQ.id] as string[])?.length > 0) {
-        setAnswer(currentQ.id, localAnswers[currentQ.id]); // CHAMA setAnswer COM TODAS AS SELEÇÕES MÚLTIPLAS
-      } else {
-        console.log("Por favor, selecione ao menos uma opção.");
-      }
-    }}
-    className="..."
-  >
-    Avançar
-  </motion.button>
+  onClick={() => {
+    if ((localAnswers[currentQ.id] as string[])?.length > 0) {
+      setAnswer(currentQ.id, localAnswers[currentQ.id]); // CHAMA setAnswer COM AS SELEÇÕES LOCAIS
+    } else {
+      console.log("Por favor, selecione ao menos uma opção.");
+    }
+  }}
+  className="w-full p-4 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors mt-4"
+>
+  Avançar
+</motion.button>
               )}
             </div>
             </motion.div>
