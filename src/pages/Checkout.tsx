@@ -387,7 +387,7 @@ const handleGetBottomPlan = () => {
           src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhiskey-glass-block.e8934daa.png&w=1920&q=75"
           alt=""
           className="w-full max-w-md mx-auto rounded-lg shadow-xl mb-8 md:mb-0"
-          style={{ marginBottom: '0' }}
+          
         />
       </div>
 
