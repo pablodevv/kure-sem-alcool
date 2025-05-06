@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Label } from 'recharts';
 import { useNavigate } from 'react-router-dom';
 import { Gauge, Star, Check, Cookie, UtensilsCrossed, Frown, Brain } from 'lucide-react';
 import { useQuizStore } from '../store/quiz';
@@ -94,10 +94,17 @@ export default function Summary() {
                 <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
                   <XAxis dataKey="week" stroke="#fff" />
                   <YAxis
-                    stroke="#fff"
-                    domain={[Math.min(targetWeight, 50), Math.max(weight, 80)]}
-                    ticks={[50, 55, 60, 65, 70, 75, 80]}
-                  />
+  stroke="#fff"
+  domain={[10, 90]}
+  ticks={[10, 30, 50, 70, 90]}
+>
+  <Label
+    value="Consumo de Álcool"
+    angle={-90}
+    position="insideLeft"
+    style={{ textAnchor: 'middle', fill: '#fff' }}
+  />
+</YAxis>
                   <Line
                     type="monotone"
                     dataKey="kure"
@@ -155,10 +162,17 @@ export default function Summary() {
                 <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
                   <XAxis dataKey="week" stroke="#fff" />
                   <YAxis
-                    stroke="#fff"
-                    domain={[Math.min(targetWeight, 50), Math.max(weight, 80)]}
-                    ticks={[50, 55, 60, 65, 70, 75, 80]}
-                  />
+  stroke="#fff"
+  domain={[10, 90]}
+  ticks={[10, 30, 50, 70, 90]}
+>
+  <Label
+    value="Consumo de Álcool"
+    angle={-90}
+    position="insideLeft"
+    style={{ textAnchor: 'middle', fill: '#fff' }}
+  />
+</YAxis>
                   <Line
                     type="monotone"
                     dataKey="kure"
