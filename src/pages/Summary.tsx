@@ -50,7 +50,7 @@ const testimonials = [
   {
     date: '24 Jun 2024',
     rating: 5,
-    text: 'No começo, eu estava cético, mas o Kure me surpreendeu! Depois de apenas algumas sessões, estou livre do álcool e me sinto muito melhor.',
+    text: 'No começo, eu estava cética, mas o Kure me surpreendeu! Depois de apenas algumas sessões, estou livre do álcool e me sinto muito melhor.',
     author: 'Laura S.',
     verified: true
   },
