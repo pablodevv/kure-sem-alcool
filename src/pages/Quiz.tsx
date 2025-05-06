@@ -168,36 +168,38 @@ const questions = [
   {
     id: 'outcome',
     title: 'Por que você quer parar de beber?',
+    multipleChoice: true,
     options: [
-      { label: 'Melhorar minha saúde geral', emoji: '🧬' },
-      { label: 'Perder peso', emoji: '🧘‍♀️' },
-      { label: 'Dormir melhor', emoji: '😴' },
-      { label: 'Aumentar meus níveis de energia', emoji: '🚀' },
-      { label: 'Melhorar minha clareza mental', emoji: '🧠' },
-      { label: 'Fortalecer meus relacionamentos', emoji: '💜' },
-      { label: 'Economizar dinheiro', emoji: '💰' },
-      { label: 'Outro', emoji: '🤔' }
+      { label: 'Melhorar minha saúde geral', emoji: '🧬', value: 'saudegeral' },
+      { label: 'Perder peso', emoji: '🧘‍♀️', value: 'perderpeso' },
+      { label: 'Dormir melhor', emoji: '😴', value: 'dormirmelhor' },
+      { label: 'Aumentar meus níveis de energia', emoji: '🚀', value: 'maisenergia' },
+      { label: 'Melhorar minha clareza mental', emoji: '🧠', value: 'maisclareza' },
+      { label: 'Fortalecer meus relacionamentos', emoji: '💜', value: 'maisrelacionamentos' },
+      { label: 'Economizar dinheiro', emoji: '💰', value: 'economizardinheiro' },
+      { label: 'Outro', emoji: '🤔', value: 'outro' }
     ]
   },
   {
     id: 'previous_attempts',
     title: 'Você já tentou parar de beber álcool antes?',
     options: [
-      { label: 'Sim, uma vez' },
-      { label: 'Sim, várias vezes' },
-      { label: 'Não, esta é minha primeira tentativa' }
+      { label: 'Sim, uma vez', value: 'umavez' },
+      { label: 'Sim, várias vezes', value: 'variasvezes' },
+      { label: 'Não, esta é minha primeira tentativa', value: 'primeiratentativa' }
     ]
   },
 
 {
     id: 'impacto', 
     title: 'O álcool impactou algum desses aspectos da sua vida?',
+  multipleChoice: true,
     options: [
-      { label: 'Isolamento ou afastamento dos outros' },
-      { label: 'Libido ou saúde sexual' },
-      { label: 'Relações ou conexões sociais' },
-      { label: 'Autoestima ou autovalor' },
-      { label: 'Maus hábitos alimentares ou estilo de vida pouco saudável' }
+      { label: 'Isolamento ou afastamento dos outros', value: 'afastamentodeoutros' },
+      { label: 'Libido ou saúde sexual', value: 'menoslibido' },
+      { label: 'Relações ou conexões sociais', value: 'conexoessociais' },
+      { label: 'Autoestima ou autovalor', value: 'autoestimaautovalor' },
+      { label: 'Maus hábitos alimentares ou estilo de vida pouco saudável', value: 'vidapoucosaudavel' }
     ]
   },
 
@@ -206,13 +208,13 @@ const questions = [
     id: 'weight_cause',
     title: 'Qual você acredita ser a principal causa do seu consumo de álcool?',
     options: [
-      { label: 'Dor Emocional / Trauma', emoji: '💔' },
-      { label: 'Estresse / Ansiedade', emoji: '😩' },
-      { label: 'Pressão social', emoji: '🍻' },
-      { label: 'Fuga da realidade', emoji: '😶‍🌫️' },
-      { label: 'História da Família / Genética', emoji: '👨‍👩‍👧' },
-      { label: 'Tédio ou falta de propósito', emoji: '🤷‍♀️' },
-      { label: 'Outro', emoji: '🤔' }
+      { label: 'Dor Emocional / Trauma', emoji: '💔', value: 'emotionalpain' },
+      { label: 'Estresse / Ansiedade', emoji: '😩', value: 'estresseansiedade' },
+      { label: 'Pressão social', emoji: '🍻', value: 'pressaosocial' },
+      { label: 'Fuga da realidade', emoji: '😶‍🌫️', value: 'fugadarealidade' },
+      { label: 'História da Família / Genética', emoji: '👨‍👩‍👧', value: 'historiadafamilia' },
+      { label: 'Tédio ou falta de propósito', emoji: '🤷‍♀️', value: 'tediooufaltade' },
+      { label: 'Outro', emoji: '🤔', value: 'outrrr' }
     ]
   },
   
@@ -255,10 +257,10 @@ const questions = [
     id: 'struggle_duration',
     title: 'Há quanto tempo você bebe álcool?',
     options: [
-      { label: 'Menos de um ano' },
-      { label: '1-3 anos' },
-      { label: '3-5 anos' },
-      { label: 'Mais de 5 anos' }
+      { label: 'Menos de um ano', value: 'menisdeano' },
+      { label: '1-3 anos', value: 'treasfdj' },
+      { label: '3-5 anos', value: 'cincodjd' },
+      { label: 'Mais de 5 anos', value: 'maishjkf' }
     ]
   },
 
@@ -267,11 +269,11 @@ const questions = [
     id: 'eating_habits',
     title: 'Com que frequência você consome álcool atualmente?',
     options: [
-      { label: 'Diariamente' },
-      { label: 'Algumas vezes por semana' },
-      { label: 'Uma vez por semana' },
-      { label: 'Ocasionalmente' },
-      { label: 'Raramente' }
+      { label: 'Diariamente', value: 'diarxsdf' },
+      { label: 'Algumas vezes por semana', value: 'algyusdd' },
+      { label: 'Uma vez por semana', value: 'umahfsd' },
+      { label: 'Ocasionalmente', value: 'ocaldj' },
+      { label: 'Raramente', value: 'rarakdfd' }
     ]
   },
 
@@ -280,10 +282,10 @@ const questions = [
     id: 'food_craving',
     title: 'Quanta bebida alcoólica você costuma beber?',
     options: [
-      { label: 'Um copo de vinho/cerveja' },
-      { label: 'Algumas cervejas ou coquetéis' },
-      { label: 'Muitas vezes terminando uma garrafa inteira' },
-      { label: 'Beber muito e perder a noção de quanto consumo' }
+      { label: 'Um copo de vinho/cerveja', value: 'vinhosdsd' },
+      { label: 'Algumas cervejas ou coquetéis', value: 'cockfhjdf' },
+      { label: 'Muitas vezes terminando uma garrafa inteira', value: 'garravkjds' },
+      { label: 'Beber muito e perder a noção de quanto consumo', value: 'nocaojdjs' }
     ]
   },
 
@@ -292,13 +294,13 @@ const questions = [
 
   {
     id: 'life_impact',
-    title: 'Existem outros aspectos da sua vida que foram impactados negativamente pelo seu peso?',
-    subtitle: 'Selecione o que mais te afeta.',
+    title: 'Em que momentos do dia é mais difícil para você resistir à bebida?',
+    multipleChoice: true,
     options: [
-      { label: 'Manhã' },
-      { label: 'Tarde' },
-      { label: 'Noite' },
-      { label: 'Tarde da noite' }
+      { label: 'Manhã', value: 'manhsfd' },
+      { label: 'Tarde', value: 'tardkjs' },
+      { label: 'Noite', value: 'noidsfn' },
+      { label: 'Tarde da noite', value: 'tarniots' }
     ]
   },
 
@@ -306,15 +308,16 @@ const questions = [
 {
     id: 'physical_symptom',
     title: 'Quais destes sintomas você sente regularmente?',
+  multipleChoice: true,
     options: [
-      { label: 'Tremores' },
-      { label: 'Náuseas / vômitos' },
-      { label: 'Insônia' },
-      { label: 'Dores de cabeça' },
-      { label: 'Suando excessivamente' },
-      { label: 'Sensação de fraqueza' },
-      { label: 'Perda de memória ou confusão' },
-      { label: 'Outro' }
+      { label: 'Tremores', value: 'tremorsds' },
+      { label: 'Náuseas / vômitos', value: 'vomitsd' },
+      { label: 'Insônia', value: 'insonidsfd' },
+      { label: 'Dores de cabeça', value: 'cabecakjfsdkf' },
+      { label: 'Suando excessivamente', value: 'suorjksdf' },
+      { label: 'Sensação de fraqueza', value: 'farjksdf' },
+      { label: 'Perda de memória ou confusão', value: 'confudsjhd' },
+      { label: 'Outro', value: 'oslsd' }
     ]
   },
 
@@ -342,15 +345,16 @@ const questions = [
   {
     id: 'internal_belief',
     title: 'Quais são as crenças limitantes que estão impedindo você de parar de beber?',
+    multipleChoice: true,
     options: [
-      { label: '"Preciso de álcool para relaxar ou lidar com o estresse."', emoji: '💆‍♀️' },
-      { label: '"Não consigo me divertir ou socializar sem beber."', emoji: '🥳' },
-      { label: '"Qual é o sentido? Se eu tentar, vou falhar."', emoji: '🤷‍♀️' },
-      { label: '"O álcool faz parte da minha identidade ou de quem eu sou."', emoji: '😞' },
-      { label: '"Tenho medo de enfrentar minhas emoções sem álcool."', emoji: '🙈' },
-      { label: '"Eu não mereço uma vida melhor."', emoji: '😔' },
-      { label: '"Meus amigos ou familiares esperam que eu beba."', emoji: '🕺' },
-      { label: 'Incerto', emoji: '🤔' }
+      { label: '"Preciso de álcool para relaxar ou lidar com o estresse."', emoji: '💆‍♀️', value: 'precisodealcodfdf' },
+      { label: '"Não consigo me divertir ou socializar sem beber."', emoji: '🥳', value: 'diversaoaods' },
+      { label: '"Qual é o sentido? Se eu tentar, vou falhar."', emoji: '🤷‍♀️', value: 'sentidsds' },
+      { label: '"O álcool faz parte da minha identidade ou de quem eu sou."', emoji: '😞', value: 'identidfdf' },
+      { label: '"Tenho medo de enfrentar minhas emoções sem álcool."', emoji: '🙈', value: 'medofhnkjdf' },
+      { label: '"Eu não mereço uma vida melhor."', emoji: '😔', value: 'merecoshjkdhsd' },
+      { label: '"Meus amigos ou familiares esperam que eu beba."', emoji: '🕺', value: 'amifjdf' },
+      { label: 'Incerto', emoji: '🤔', value: 'incerkjdskfj' }
     ]
   },
 
@@ -359,11 +363,12 @@ const questions = [
       {
     id: 'life_impact',
     title: 'Que tipo de sistema de suporte você tem atualmente?',
+        multipleChoice: true,
     options: [
-      { label: 'Amigos / Família' },
-      { label: 'Ajuda profissional (por exemplo, terapeuta, coach)' },
-      { label: 'Comunidades online' },
-      { label: 'Nenhum por enquanto' }
+      { label: 'Amigos / Família', value: 'amgjkjfd' },
+      { label: 'Ajuda profissional (por exemplo, terapeuta, coach)', value: 'ajudprogjdkfd' },
+      { label: 'Comunidades online', value: 'comundksjfksdf' },
+      { label: 'Nenhum por enquanto', value: 'nonejkfd' }
     ]
   },
 
@@ -374,11 +379,11 @@ const questions = [
     id: 'activity_level',
     title: 'Qual é sua visão máxima para uma vida sem álcool?',
     options: [
-      { label: 'Sentindo-se mais saudável e com mais energia', emoji: '🌱' },
-      { label: 'Estar mais presente com os entes queridos', emoji: '💞' },
-      { label: 'Alcançar objetivos profissionais ou pessoais', emoji: '🚀' },
-      { label: 'Recuperando o controle e a confiança', emoji: '💪' },
-      { label: 'Outro', emoji: '🤔' }
+      { label: 'Sentindo-se mais saudável e com mais energia', emoji: '🌱', value: 'saudakdfhjkd' },
+      { label: 'Estar mais presente com os entes queridos', emoji: '💞', value: 'presentekjfkd' },
+      { label: 'Alcançar objetivos profissionais ou pessoais', emoji: '🚀', value: 'objsdkshjdk' },
+      { label: 'Recuperando o controle e a confiança', emoji: '💪', value: 'confijdifd' },
+      { label: 'Outro', emoji: '🤔', value: 'odakjfdkfh' }
     ]
   },
 
@@ -389,8 +394,8 @@ const questions = [
     id: 'hypnosis_knowledge',
     title: 'Você já ouviu falar que a hipnose ajuda as pessoas a mudar seu comportamento?',
     options: [
-      { label: 'Sim', emoji: '👍' },
-      { label: 'Não tenho certeza', emoji: '🤔' }
+      { label: 'Sim', emoji: '👍', value: 'ouiskdhjk' },
+      { label: 'Não tenho certeza', emoji: '🤔', value: 'nopekjdsfd' }
     ]
   },
 
@@ -400,8 +405,8 @@ const questions = [
     title: 'Você foi encaminhado para Kure por um nutricionista ou terapeuta cognitivo comportamental?',
     subtitle: 'A hipnose é um método cientificamente comprovado para resolver problemas relacionados à nutrição e questões psicológicas.',
     options: [
-      { label: 'Sim' },
-      { label: 'Não' }
+      { label: 'Sim', value: 'sinsjf' },
+      { label: 'Não', value: 'nnuskfdjf' }
     ]
   },
 
@@ -459,10 +464,10 @@ const questions = [
     title: 'Imagine atingir sua meta. Como você se recompensará?',
     subtitle: 'Em tempos desafiadores, lembre-se desta recompensa como motivação para continuar.',
     options: [
-      { label: 'Vou fazer um dia de SPA', emoji: '💆' },
-      { label: 'Vou contribuir para caridade', emoji: '💖' },
-      { label: 'Vou mudar de emprego ou fazer algo igualmente significativo', emoji: '✨' },
-      { label: 'Vou finalmente fazer aquela viagem linda que sempre sonhei', emoji: '🌴' }
+      { label: 'Vou fazer um dia de SPA', emoji: '💆', value: 'spajkfhd' },
+      { label: 'Vou contribuir para caridade', emoji: '💖', value: 'caridakjfkd' },
+      { label: 'Vou mudar de emprego ou fazer algo igualmente significativo', emoji: '✨', value: 'emprhdfjdhf' },
+      { label: 'Vou finalmente fazer aquela viagem linda que sempre sonhei', emoji: '🌴', value: 'viagemkjfkdf' }
     ]
   }
 
@@ -471,12 +476,37 @@ const questions = [
   
 ];
 
+
+
 export default function Quiz() {
   const navigate = useNavigate();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showSuccess, setShowSuccess] = useState(false);
   const [processingAnswers, setProcessingAnswers] = useState(false);
   const [showEmailCollection, setShowEmailCollection] = useState(false);
+
+  const [answers, setAnswers] = useState<{ [key: string]: string | string[] }>({});
+
+  const handleSingleSelect = (id: string, value: string) => {
+    setAnswers({ ...answers, [id]: value });
+    console.log(`Resposta única para ${id}:`, value);
+    // MANTENHA A SUA LÓGICA DE AVANÇAR AQUI:
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(prev => prev + 1);
+    } else {
+      setProcessingAnswers(true);
+    }
+  };
+
+  const handleMultipleSelect = (id: string, value: string, isSelected: boolean) => {
+    const currentAnswers = (answers[id] as string[]) || [];
+    if (isSelected) {
+      setAnswers({ ...answers, [id]: [...currentAnswers, value] });
+    } else {
+      setAnswers({ ...answers, [id]: currentAnswers.filter(item => item !== value) });
+    }
+    console.log(`Respostas múltiplas para ${id}:`, answers[id]);
+  };
 
   const {
     setAnswer,
@@ -630,13 +660,21 @@ const SKIP_EMAIL_SCREEN = true;
 
                   <div className="w-full max-w-2xl space-y-4">
                     {currentQ.options?.map((option, index) => (
-                      <QuizOption
-                        key={index}
-                        label={option.label}
-                        emoji={option.emoji}
-                        subtitle={option.subtitle}
-                        onClick={() => handleAnswer(option.label)}
-                      />
+                     <QuizOption
+              key={index}
+              label={option.label}
+              emoji={option.emoji}
+              subtitle={option.subtitle}
+              value={option.value} // IMPORTANTE: Passe o 'value' da opção
+              isMultipleChoice={currentQ.multipleChoice || false} // IMPORTANTE: Passe se a pergunta é de múltipla escolha
+              onSelect={(value) => handleSingleSelect(currentQ.id, value)} // IMPORTANTE: Passe a função para seleção única
+              onMultipleSelect={(value, isSelected) => handleMultipleSelect(currentQ.id, value, isSelected)} // IMPORTANTE: Passe a função para múltipla escolha
+              isSelected={
+                currentQ.multipleChoice
+                  ? (answers[currentQ.id] as string[])?.includes(option.value)
+                  : answers[currentQ.id] === option.value
+              }
+            />
                     ))}
                   </div>
                 </motion.div>
