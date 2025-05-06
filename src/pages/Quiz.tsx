@@ -173,10 +173,10 @@ const questions = [
       { label: 'Perder peso', emoji: '🧘‍♀️' },
       { label: 'Dormir melhor', emoji: '😴' },
       { label: 'Aumentar meus níveis de energia', emoji: '🚀' },
-      { label: 'Melhorar minha clareza mental', emoji: '🧠' }´,
-      { label: 'Fortalecer meus relacionamentos', emoji: '💜' }´,
-      { label: 'Economizar dinheiro', emoji: '💰' }´,
-      { label: 'Outro', emoji: '🤔' }´
+      { label: 'Melhorar minha clareza mental', emoji: '🧠' },
+      { label: 'Fortalecer meus relacionamentos', emoji: '💜' },
+      { label: 'Economizar dinheiro', emoji: '💰' },
+      { label: 'Outro', emoji: '🤔' }
     ]
   },
   {
