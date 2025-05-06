@@ -309,7 +309,7 @@ export default function Summary() {
           <div className="text-center mb-12">
             <div className="flex justify-center items-center gap-1 mb-2">
               <div className="text-2xl text-yellow-400">{'★'.repeat(5)}</div>
-              <span className="ml-2 text-lg">4,6 / 5 (mais de 1.000 avaliações)</span>
+              <span className="ml-2 text-lg">4,6 / 5 (+1.000 avaliações)</span>
             </div>
             <h2 className="text-4xl font-bold">O que nossos usuários dizem sobre o Kure?</h2>
           </div>
