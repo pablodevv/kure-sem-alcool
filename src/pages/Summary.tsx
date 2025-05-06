@@ -260,7 +260,11 @@ export default function Summary() {
       <Frown className="w-6 h-6 text-purple-400" />
       <div>
         <h4 className="font-semibold">Crença interna removida</h4>
-        <p className="text-gray-400">{answers?.internal_belief || 'Sinto que DEVO limpar o prato'}</p> {/* Use 'internal_belief' */}
+        <p className="text-gray-400">
+  {Array.isArray(answers?.internal_belief) && answers.internal_belief.length > 0
+    ? answers.internal_belief[0]
+    : answers?.internal_belief || 'Sinto que DEVO limpar o prato'}
+</p>
       </div>
     </div>
   </div>
