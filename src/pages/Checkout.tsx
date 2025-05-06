@@ -489,7 +489,7 @@ const handleGetBottomPlan = () => {
           </div>
 
           <h1 className="text-4xl font-serif mb-12 text-center max-w-2xl mx-auto">
-          Obtenha sessões personalizadas de hipnoterapia para seu sucesso na perda de peso!
+          Obtenha um programa de hipnoterapia personalizado para ajudá-lo a parar de beber para sempre
         </h1>
           
           {renderPlansSection(true)}
