@@ -373,7 +373,7 @@ const handleGetBottomPlan = () => {
           <p>Mais de 345.000 programas vendidos.</p>
         </div>
         <h1 className="text-4xl font-serif mb-12 text-center max-w-2xl mx-auto">
-          Obtenha um programa de hipnoterapia personalizado para ajudá-lo a parar de beber para sempre
+          Obtenha um programa de hipnoterapia personalizado para te ajudar a parar de beber para sempre
         </h1>
 
         {renderPlansSection()}
@@ -499,7 +499,7 @@ const handleGetBottomPlan = () => {
           </div>
 
           <h1 className="text-4xl font-serif mb-12 text-center max-w-2xl mx-auto">
-          Obtenha um programa de hipnoterapia personalizado para ajudá-lo a parar de beber para sempre
+          Obtenha um programa de hipnoterapia personalizado para te ajudar a parar de beber para sempre
         </h1>
           
           {renderPlansSection(true)}
