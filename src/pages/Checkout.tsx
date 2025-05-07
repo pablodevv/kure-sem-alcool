@@ -57,7 +57,7 @@ const features = [
   'Aplicativo digital criado por especialistas em hipnose, neurociência e vício em comida',
   'Introdução às sessões de hipnose',
   'Sessões personalizadas de hipnoterapia na hora de dormir',
-  'Programas especiais de 21 dias projetados para libertá-lo dos desejos por álcool',
+  'Programas especiais de 21 dias projetados para te libertar dos desejos por álcool',
   'Suporte completo ao cliente 24 horas por dia, 7 dias por semana',
   'Garantia de privacidade e segurança',
   'Acompanhamento do progresso'
