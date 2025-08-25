@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CheckCircle, Gift, Shield, Star, X, HelpCircle, Activity, Smile, Frown, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '../components/Button';
-import { useNavigate } from 'react-router-dom'; // Importe useNavigate do react-router-dom
+import { useNavigate } from 'react-router-dom'; 
 
 interface Plan {
   id: '7-day' | '1-month' | '3-month';
@@ -12,7 +12,7 @@ interface Plan {
   originalPricePerDay: number;
   popular?: boolean;
   hasGift?: boolean;
-  link: string; // Adicione a propriedade 'link'
+  link: string; 
 }
 
 interface FAQItem {
@@ -168,7 +168,7 @@ export default function Checkout() {
     }
   ]);
 
-  const navigate = useNavigate(); // Inicialize useNavigate
+  const navigate = useNavigate(); 
 
   
 
@@ -239,10 +239,10 @@ const handleGetBottomPlan = () => {
               onClick={() => {
                 if (isBottom) {
                   setSelectedPlanBottom(plan.id);
-                  setCheckoutLink(plan.link); // Atualiza o link ao selecionar na seção inferior
+                  setCheckoutLink(plan.link); 
                 } else {
                   setSelectedPlan(plan.id);
-                  setCheckoutLink(plan.link); // Atualiza o link ao selecionar na seção superior
+                  setCheckoutLink(plan.link); 
                 }
               }}
               className={`bg-white rounded-xl p-6 relative cursor-pointer ${
@@ -264,10 +264,10 @@ const handleGetBottomPlan = () => {
                     onChange={() => {
                       if (isBottom) {
                         setSelectedPlanBottom(plan.id);
-                        setCheckoutLink(plan.link); // Atualiza o link ao mudar o radio na seção inferior
+                        setCheckoutLink(plan.link); 
                       } else {
                         setSelectedPlan(plan.id);
-                        setCheckoutLink(plan.link); // Atualiza o link ao mudar o radio na seção superior
+                        setCheckoutLink(plan.link); 
                       }
                     }}
                     className="mr-3 accent-purple-500"
