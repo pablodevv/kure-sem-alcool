@@ -32,7 +32,6 @@ export default function NumberInput({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     
-    // Permite apenas números e um único ponto decimal
     if (!/^\d*\.?\d*$/.test(newValue) && newValue !== '') {
       return;
     }
