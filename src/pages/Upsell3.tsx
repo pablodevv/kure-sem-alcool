@@ -6,14 +6,13 @@ import { useNavigate } from "react-router-dom"
 
 
 export default function UpsellMenteBlindada() {
-  const [timeLeft, setTimeLeft] = useState(600) // 10 minutos
+  const [timeLeft, setTimeLeft] = useState(600) 
   const navigate = useNavigate()
 
 
 
   
 useEffect(() => {
-  // Rola a página para o topo sempre que ela for renderizada
   window.scrollTo(0, 0);
 }, []);
   
@@ -32,7 +31,7 @@ useEffect(() => {
   }
 
   const handleAccept = () => {
-    window.location.href = "https://pay.kirvano.com/3ecc476b-077e-4c6c-8fcd-3528821e2dc6" // substitua pelo seu link real
+    window.location.href = "https://pay.kirvano.com/3ecc476b-077e-4c6c-8fcd-3528821e2dc6" 
   }
 
   const handleDecline = () => {
@@ -114,7 +113,7 @@ useEffect(() => {
           Garantia total de reembolso em 7 dias. Seu risco é zero.
         </div>
 
-        {/* Prova Social */}
+        {}
         <div className="mt-6 border border-green-500 rounded-xl p-4 bg-green-50 dark:bg-green-900 text-green-800 dark:text-green-100 text-sm flex items-center gap-3">
           <CheckCircle className="w-5 h-5 text-green-500" />
           Garantia incondicional de 7 dias: se não sentir resultado, devolvemos 100% do seu dinheiro.
