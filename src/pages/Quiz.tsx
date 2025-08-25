@@ -490,7 +490,7 @@ export default function Quiz() {
  const handleSingleSelect = (id: string, value: string) => {
     setLocalAnswers({ ...localAnswers, [id]: value });
     console.log(`Resposta única para ${id}:`, value);
-    setAnswer(id, value); // ATUALIZA O STORE E AVANÇA
+    setAnswer(id, value); 
   };
 
   const handleMultipleSelect = (id: string, value: string, isSelected: boolean) => {
@@ -505,7 +505,6 @@ export default function Quiz() {
       console.log(`Respostas múltiplas para ${id}:`, newAnswers);
       return { ...prevAnswers, [id]: newAnswers };
     });
-    // NÃO CHAMAMOS setAnswer AQUI AINDA!
   };
 
   const {
@@ -676,7 +675,7 @@ const SKIP_EMAIL_SCREEN = true;
       isMultipleChoice={currentQ.multipleChoice || false}
       onSelect={(value) => {
         handleSingleSelect(currentQ.id, value);
-        if (!currentQ.multipleChoice) { // AVANÇA AUTOMATICAMENTE SE NÃO FOR MÚLTIPLA ESCOLHA
+        if (!currentQ.multipleChoice) { 
           if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(prev => prev + 1);
           } else {
@@ -692,7 +691,6 @@ const SKIP_EMAIL_SCREEN = true;
     onClick={() => {
       if ((localAnswers[currentQ.id] as string[])?.length > 0) {
         setAnswer(currentQ.id, localAnswers[currentQ.id]);
-        // ADICIONE ESTA LÓGICA DE AVANÇO AQUI:
         if (currentQuestion < questions.length - 1) {
           setCurrentQuestion(prev => prev + 1);
         } else {
