@@ -32,7 +32,7 @@ const initialState = {
   loading: false,
   height: null,
   weight: null,
-  targetWeight: null, // Inicializado como null
+  targetWeight: null,
   age: null,
   email: null,
 };
@@ -43,7 +43,7 @@ export const useQuizStore = create<QuizState>((set) => ({
   setAnswer: (question, answer) =>
     set((state) => ({
       answers: { ...state.answers, [question]: answer },
-      currentStep: state.currentStep + 1, // VOLTEI A INCREMENTAR AQUI!
+      currentStep: state.currentStep + 1,
     })),
   nextStep: () => set((state) => ({ currentStep: state.currentStep + 1 })),
   previousStep: () => set((state) => ({ currentStep: state.currentStep - 1 })),
